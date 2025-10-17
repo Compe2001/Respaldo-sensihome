@@ -1,0 +1,24 @@
+[
+  { "nombre": "Slate", "url": "/frontend/pages/modulares/slate.html" },
+  { "nombre": "Osaka", "url": "/frontend/pages/sillones/osaka.html" },
+  { "nombre": "Hanna", "url": "/frontend/pages/sillones/hanna.html" },
+  { "nombre": "Milo", "url": "/frontend/pages/modulares/milo.html" },
+  { "nombre": "Agata", "url": "/frontend/pages/camas/agata.html" },
+  { "nombre": "Mira", "url": "/frontend/pages/modulares/mira.html" },
+  { "nombre": "Boreal", "url": "/frontend/pages/camas/boreal.html" },
+  { "nombre": "Landa", "url": "/frontend/pages/camas/landa.html" },
+  { "nombre": "Raven", "url": "/frontend/pages/sillones/raven.html" },
+  { "nombre": "Tokio", "url": "/frontend/pages/modulares/mattiu.html" },
+  { "nombre": "Vincent", "url": "/frontend/pages/sillones/vincent.html" },
+  { "nombre": "Soluna", "url": "/frontend/pages/sala321/soluna.html" },
+  { "nombre": "Nova", "url": "/frontend/pages/sala321/nova.html" },
+  { "nombre": "Valetta", "url": "/frontend/pages/esquinera/valetta.html" },
+  { "nombre": "Sahara", "url": "/frontend/pages/sillones/sahara.html" },
+  { "nombre": "Aurora", "url": "/frontend/pages/sala321/aurora.html" },
+  {"nombre": "Sahara", "URL": "/frontend/pages/sillones/sahara.html"}
+  
+  
+
+  
+]
+

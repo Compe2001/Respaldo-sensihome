@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Producto - Sensi Home</title>
+  <link href="/frontend/css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/notifications.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/thumbnails.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/buttons.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="header2">
+            <nav>
+                <ul class="navbar">
+                    <li class="nav-item-home">
+                        <a href="index.html">
+                            <img src="/frontend/images/logo-blanco.png" class="homebutton" alt="Inicio">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+
+            <!-- Enlace corregido -->
+            <a href="sillones.html">
+                <h3 class="returnsection">SILLONES</h3>
+            </a>
+
+            <button onclick="window.location.href='/frontend/carrito.html'" class="carrito-button">
+  <img src="/frontend/images/carrito.png" alt="Carrito">
+  <span class="carrito-count">0</span>
+</button>
+        </header>
+        <section class="producto">
+            <div class="thumbnail3" data-id="raven" data-nombre="Raven" data-precio="7999">
+                <div class="carrusel-producto">
+                    <div class="carrusel-producto-wrapper">
+                        <img src="/frontend/images/sillones/raven/raven.png" class="carrusel-producto-item active" alt="Vista 1">
+                        <img src="/frontend/images/sillones/raven/raven-isometrico.jpg" class="carrusel-producto-item" alt="Vista 2">
+                    </div>
+                    <button class="carrusel-producto-btn prev">&#9664;</button>
+                    <button class="carrusel-producto-btn next">&#9654;</button>
+                </div>
+                <h2>RAVEN</h2>
+                <p class="precio">$7,999 MXN</p>
+                <p class="descripcion">Sillón giratorio, ajustable.</p>
+                <ul class="caracteristicas">
+                    <li>Gira 360°</li>
+                    <li>Ajuste de altura neumático</li>
+                    <li>Tapizado suave al tacto</li>
+                    <li>Estructura metálica resistente</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al carrito</button>
+                <button class="comprar">Comprar Via Whatsapp (solo ZMG) </button>
+                <button class="contacto">Más Información</button>
+            </div>
+        </section>
+        <!-- Pie de Página -->
+        <footer class="footer">
+            <p>2025 - Sensi Home | Guadalajara, Jalisco</p>
+        </footer>
+    </div>
+    <script src="/frontend/js/carrito.js"></script>
+    <script src="/frontend/js/carrusel-producto.js" defer></script>
+    <script src="/frontend/js/whatsapp-contacto.js" defer></script>
+</body>
+<footer class="header2">
+<div class="footerindex">Atención a clientes Sucursal 33-33-33-33-33 soporte@sensihome.com.mx</div>
+
+<div class="footerindex"> Aviso de privacidad Términos y condiciones © Sensi Home Todos los derechos reservados. </div>
+
+
+
+</footer>
+</html>

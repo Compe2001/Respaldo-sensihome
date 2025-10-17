@@ -1,0 +1,121 @@
+.menu-pago {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid #f2c094;
+  border-radius: 16px;
+  padding: 24px;
+  width: 320px;
+  max-width: 90%;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.menu-pago h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+.menu-pago p {
+  font-size: 15px;
+  margin: 8px 0;
+  color: #6b4c2e;
+  text-align: center;
+}
+
+.menu-pago button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  font-size: 15px;
+  background-color: #5d606f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.menu-pago button:hover {
+  background-color: #e0a86c;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.menu-pago {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid #007777;
+  border-radius: 16px;
+  padding: 24px;
+  width: 320px;
+  max-width: 90%;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 8px 24px rgba(3, 3, 3, 0.2);
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.menu-pago h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #2fa690;
+  text-align: center;
+}
+
+.menu-pago p {
+  font-size: 15px;
+  margin: 8px 0;
+  color: #5a5a5a;
+  text-align: center;
+}
+
+.menu-pago button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  font-size: 15px;
+  background-color: #9cd1c1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.menu-pago button:hover {
+  background-color: #3f8372;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+#overlay-pago {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 9998;
+}
+
+.menu-pago {
+  z-index: 9999;
+}

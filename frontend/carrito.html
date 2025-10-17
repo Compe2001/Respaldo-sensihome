@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carrito Sensi Home</title>
+<link rel="icon" href="/frontend/images/logo-blanco.png" type="image/x-icon">
+  <link href="/frontend/css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/notifications.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/thumbnails.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/buttons.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header class="header2">
+            <nav>
+                <ul class="navbar">
+                    <li class="nav-item-home">
+                        <a href="index.html">
+                            <img src="/frontend/images/logo-blanco.png" class="homebutton" alt="Inicio">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+   </header>
+
+  <section class="carrito ">
+   <div class="carrito-contenido">
+
+    <h2>Tu Carrito</h2>
+
+    <ul id="carrito_lista" class="carrito_lista">
+      <!-- Se insertan productos aquí dinámicamente -->
+    </ul>
+
+<button id="vaciarCarrito" class="vaciarcarrito ">🗑️Limpiar Carrito</button>
+
+    <div class="carrito-resumen">
+      <p>(Costo de envío no incluido)</p>
+      <p>Total: <span id="carrito-total">$0.00 MXN</span></p>
+     
+     <section> 
+
+         <div>
+       <a href="registroPedidoStripe.html">
+        <button class="pago-tarjeta" id="btn-pagar">Pago con tarjeta</button>
+      </a>
+      </div>
+    
+      <div>
+         <a href="formulariopedido.html">
+      <button class="comprarconmercadopago" id="btn-pagar"> Pagar en mercado pago </button>
+      </a>
+      
+      </div>
+
+     </section>
+   
+     
+      <button class="comprarwhats" id="btn-whatsapp" alt="Solo disponible en Zona metropolitana de Guadalajara">Comprar vía WhatsApp (ZMG)</button>
+      
+     
+     <div>
+      <a href="/frontend/index.html">
+
+      
+      <button class="menu-toggle" id="btn-continuar" >Seguir Comprando</button>
+      </a>
+     </div>
+     
+     
+
+    </div>
+   
+  </div>
+</section>
+<div id="notificaciones"></div>
+<script src="/frontend/js/notificaciones.js"></script>
+<script src="/frontend/js/carrito.js"></script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap');
+
+
+.notificacion {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--color-acento);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-family: var(--fuente-principal);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.notificacion.error {
+  background-color: #e74c3c;
+}
+
+.notificacion.warning {
+  background-color: #e79a3c;
+}
+
+.notificacion.exito {
+  background-color: #12a750;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ .contador-carrito {
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+.contador-carrito.actualizado {
+  animation: pop 0.3s ease;
+}

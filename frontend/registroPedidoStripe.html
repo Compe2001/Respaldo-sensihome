@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Pedido</title>
+    <link rel="icon" href="/frontend/images/logo-blanco.png" type="image/x-icon">
+  <link href="/frontend/css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/notifications.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/thumbnails.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/buttons.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<header class="header2">
+            <nav>
+                <ul class="navbar">
+                    <li class="nav-item-home">
+                        <a href="index.html">
+                            <img src="/frontend/images/logo-blanco.png" class="homebutton" alt="Inicio">
+                        </a>
+    
+                    </li>
+                </ul>
+                
+            </nav>
+
+            <h3 class="section animate__animated animate__pulse">Pago Con Tarjeta</h3>
+
+
+<button onclick="window.location.href='/frontend/carrito.html'" class="carrito-button animate__animated animate__bounceIn "> 
+  <img src="/frontend/images/carrito.png" alt="Carrito">
+  <span class="carrito-count">0</span>
+</button>
+
+ </header>
+<body>
+<section class="gallery">
+
+
+  <ul id="carrito-lista" class="carrito-lista">
+      <!-- Se insertan productos aquí dinámicamente -->
+    </ul>
+
+
+
+<form id="pedido-form" class="thumbnail3">
+    
+
+
+
+
+<div class="input-group">
+  <label for="fecha">Fecha</label>
+  <input type="date" id="fecha" name="fecha" required>
+</div>
+ 
+   
+    <div class="input-group">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Ej. Ana López">
+    </div>
+
+    <div class="input-group">
+    <label for="municipio"> Municipio </label>
+    <select id="municipio" name="municipio" class="selector-codigopostal">
+      <option value=""> ----------- </option>
+      <option value="Guadalajara">Guadalajara</option>
+      <option value="Zapopan">Zapopan</option>
+      <option value="Tlajomulco">Tlajomulco</option>
+      <option value="Tonala">Tonalá</option>
+      <option value="Tlaquepaque">Tlaquepaque</option>
+      <option value="El Salto">El Salto</option>
+    </select>
+    </div>
+
+    <div class="input-group">
+      <label for="codigo_postal">Codigo Postal</label>
+      <input type="text" id="codigo_postal" name="codigo_postal" required placeholder="Ej. 00000">
+    </div>
+
+    <div class="input-group">
+      <label for="estado">Estado</label>
+      <input type="text" id="estado" name="estado" required placeholder="Ej. Jalisco">
+    </div>
+    
+    <div class="input-group">
+      <label for="correo">Correo electrónico</label>
+      <input type="email" id="correo" name="correo" required placeholder="Ej. ana@example.com">
+    </div>
+
+    <div class="input-group">
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 3312345678">
+    </div>
+
+    <div class="input-group">
+      <label for="direccion">Dirección de entrega</label>
+      <textarea id="direccion" name="direccion" required rows="3" placeholder="Calle, Numero exterior,Numero interior, Detalles de la ubicación."></textarea>
+    </div>
+    
+<div class="menu-toggle">
+  <label for="requiere-factura">¿Necesitas factura?</label>
+  <select class= "button2" id="requiere-factura" name="requiere_factura" required>
+    <option value="no">No</option>
+    <option value="si">Sí</option>
+  </select>
+</div>
+
+<div id="factura-campos" style="display: none;">
+  <div class="input-group">
+    <label for="rfc">RFC</label>
+    <input type="text" id="rfc" name="rfc" placeholder="Ej. ABC123456789">
+  </div>
+
+  <div class="input-group">
+    <label for="razon_social">Razón Social</label>
+    <input type="text" id="razon_social" name="razon_social" placeholder="Ej. SILLONES ZMG S.A. de C.V.">
+  </div>
+
+  <div class="input-group">
+    <label for="domicilio-fiscal">Domicilio Fiscal</label>
+    <input type="text" id="domicilio-fiscal" name="domicilio-fiscal" placeholder="Dirección fiscal">
+  </div>
+
+  <div class="input-group">
+    <label for="uso_cfdi">Uso del CFDI</label>
+    <select id="uso_cfdi" name="uso_cfdi" class="selector-codigopostal">
+      <option value="">Selecciona una opción</option>
+      <option value="G01">G01 - Adquisición de mercancías</option>
+      <option value="G03">G03 - Gastos en general</option>
+      <option value="P01">P01 - Por definir</option>
+    </select>
+  </div>
+
+  <div class="input-group">
+    <label for="regimen_fiscal">Régimen Fiscal</label>
+    <select id="regimen_fiscal" name="regimen_fiscal" class="selector-codigopostal">
+      <option value="">Selecciona una opción</option>
+      <option value="601">601 - General de Ley Personas Morales</option>
+      <option value="603">603 - Personas Físicas con Actividades Empresariales</option>
+      <option value="605">605 - Sueldos y Salarios</option>
+    </select>
+  </div>
+
+</div>
+<div id="fecha-entrega" class="footerindex">
+<h2 class="text_column">Tiempo de entrega aproximado 1 semana
+  ✨Se te dará seguimiento a tu pedido via correo o telefono✨
+</h2>
+
+
+</div>
+
+<div id="stripe-container" style="display:none;">
+  <div id="card-element"></div>
+</div>
+
+<button type="button" id="btnConfirmarPago" class="button" style="display:none;" disabled>Confirmar pago con tarjeta</button>
+
+
+<div id="resumen-pedido" class="input-group"></div>
+    <div id="fecha-de-pedido" class="fecha-pedido"> </div>
+    <button id="btnSubmit" type="submit" class="buttonprepago">Proceder a ingresar No° de Tarjeta</button>
+
+
+
+
+    
+  </form>
+
+
+  
+</section>
+
+
+
+<script>
+  const hoy = new Date().toISOString().split("T")[0];
+  document.getElementById("fecha").value = hoy;
+</script>
+
+<script src="/frontend/js/carrito.js"></script>
+<script src="https://js.stripe.com/v3"></script>
+<script src="/frontend/js/registropedidostripe.js"></script>
+</body>
+</html>
+

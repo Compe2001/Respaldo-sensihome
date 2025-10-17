@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap');
+
+
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sucursal-header {
+  
+    margin-top: 170px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sucursal-titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.sucursal-subtitulo {
+  font-size: 1.2em;
+  color: #666;
+}
+
+/* Galería */
+.galeria-sucursal {
+  margin-bottom: 40px;
+}
+
+.galeria-sucursal h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.galeria-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foto-principal {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.galeria-img-principal {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.galeria-miniaturas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 800px;
+}
+
+.miniatura-item {
+  cursor: pointer;
+}
+
+.miniatura-img {
+  width: 100%;
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+
+.miniatura-img:hover {
+  transform: scale(1.05);
+}
+
+/* Información de la sucursal */
+.info-sucursal {
+  margin-bottom: 40px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.info-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.info-detail p, .info-detail ul {
+  margin: 5px 0;
+}
+
+.info-detail ul {
+  padding-left: 20px;
+}
+
+/* Mapa */
+.mapa-sucursal {
+  margin-bottom: 40px;
+}
+
+.mapa-sucursal h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mapa-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* CTA */
+.sucursal-cta {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.cta-content h3 {
+  margin-top: 0;
+}
+
+.cta-button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #555;
+}
