@@ -68,8 +68,6 @@ app._router?.stack?.forEach(r => {
 
 
 
-
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🧪 Ruta de salud                           ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -79,10 +77,6 @@ app.get('/api/health', (req, res) => {
     environment: process.env.NODE_ENV || 'development',
   });
 });
-
-
-
-
 
 
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -99,9 +93,6 @@ app.get("/api/stock", (req, res) => {
     res.status(500).json({ error: "No se pudo cargar el stock" });
   }
 });
-
-
-
 
 
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
