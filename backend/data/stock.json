@@ -1,7 +1,7 @@
 
 
 [
-  { "id": "hanna", "nombre": "HANNA", "stock":6, "precio": 4999, "precio_anterior": 9999},
+  { "id": "hanna", "nombre": "HANNA", "stock":22, "precio": 4999, "precio_anterior": 9999},
   { "id": "slate", "nombre": "SLATE", "stock": 2, "precio": 7999, "precio_anterior": null},
   { "id": "osaka", "nombre": "OSAKA", "stock": 3, "precio": 6500, "precio_anterior": 6999 },
   { "id": "sahara", "nombre": "SAHARA", "stock": 4, "precio": 5500, "precio_anterior": 6999 },

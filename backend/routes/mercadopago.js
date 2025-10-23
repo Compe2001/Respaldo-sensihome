@@ -1,86 +1,59 @@
+// routes/mercadopago.js
 const express = require('express');
 const router = express.Router();
-const mercadopago = require('mercadopago');
+const { MercadoPagoConfig, Preference } = require('mercadopago');
 
-console.log("✅ mercadopago.js montado");
+// 🛡️ Validación defensiva del token
+const ACCESS_TOKEN = process.env.MP_ACCESS_TOKEN;
+if (!ACCESS_TOKEN) {
+  console.error('❌ MP_ACCESS_TOKEN no definido en .env');
+  throw new Error('Token de Mercado Pago no configurado');
+}
 
-// Configura el token
-mercadopago.access_token = process.env.MP_ACCESS_TOKEN;
+// ✅ Inicialización moderna del cliente
+const client = new MercadoPagoConfig({ accessToken: ACCESS_TOKEN });
 
-// 🔍 Verificación de token
-router.get('/_mp_check_token', async (req, res) => {
-  try {
-    const r = await mercadopago.get('/v1/users/me');
-    res.json({ ok: true, result: r });
-  } catch (err) {
-    const upstream = err?.response?.body || err;
-    res.status(400).json({ ok: false, upstream });
-  }
-});
-
-// 💰 Crear preferencia
 router.post('/crear-preferencia', async (req, res) => {
+  const { carrito, ...cliente } = req.body;
+
+  if (!Array.isArray(carrito) || carrito.length === 0) {
+    return res.status(400).json({ error: 'Carrito vacío o malformado' });
+  }
+
+  const items = carrito.map(item => ({
+    title: item.nombre,
+    quantity: item.cantidad,
+    unit_price: item.precio,
+    currency_id: "MXN"
+  }));
+
   try {
-    console.log("📨 POST /crear-preferencia recibido");
-    const { carrito = [], nombre, correo } = req.body;
-
-    if (!Array.isArray(carrito) || carrito.length === 0) {
-      return res.status(400).json({ error: 'Carrito vacío o malformado' });
-    }
-
-    const items = carrito.map(item => ({
-      title: item.nombre,
-      quantity: Number(item.cantidad),
-      unit_price: Number(item.precio),
-      currency_id: 'MXN'
-    }));
-
-    if (items.some(i => isNaN(i.unit_price) || isNaN(i.quantity))) {
-      return res.status(400).json({ error: 'Precio o cantidad inválidos en algún item' });
-    }
-
-    if (!correo || !correo.includes('@')) {
-      return res.status(400).json({ error: 'Correo inválido' });
-    }
-
-    const preference = {
-      items,
-      payer: { name: nombre, email: correo },
-      back_urls: {
-        success: 'https://sensihome.com.mx/success.html',
-        failure: 'https://sensihome.com.mx/failure.html',
-        pending: 'https://sensihome.com.mx/pending.html'
-      },
-      auto_return: 'approved'
-    };
-
-    console.log("🧾 Preferencia enviada a Mercado Pago:", JSON.stringify(preference, null, 2));
-
-    if (!mercadopago.access_token) {
-      console.error('❌ mercadopago.access_token no configurado. Revisa .env y orden de require.');
-      return res.status(500).json({ error: 'MP token no configurado' });
-    }
-
-    const response = await mercadopago.preferences.create(preference);
-    console.log("✅ Preferencia creada:", response.body);
-    res.json({ preferenceId: response.body.id });
-
-  } catch (error) {
-    console.error("❌ Error inesperado en /crear-preferencia:");
-    try {
-      console.log("typeof error:", typeof error);
-      console.log("error instanceof Error:", error instanceof Error);
-      console.log("error keys:", Object.keys(error || {}));
-      console.dir(error, { depth: null });
-      if (error.response) {
-        console.log("error.response.keys:", Object.keys(error.response || {}));
-        console.log("error.response.body:", JSON.stringify(error.response.body || error.response, null, 2));
+    const preference = await new Preference(client).create({
+      body: {
+        items,
+        back_urls: {
+          success: "https://tusitio.com/success.html",
+          failure: "https://tusitio.com/error.html",
+          pending: "https://tusitio.com/pendiente.html"
+        },
+        auto_return: "approved",
+        metadata: {
+          correo: cliente.correo,
+          fecha: cliente.fecha,
+          carrito: JSON.stringify(carrito)
+        }
       }
-    } catch (logErr) {
-      console.error("⚠️ Falló el log del error:", logErr);
-    }
-    const upstream = error?.response?.body || error;
-    res.status(500).json({ error: 'Error al generar preferencia de pago', upstream });
+    });
+
+    res.json({
+      success: true,
+      init_point: preference.init_point,
+      preferenceId: preference.id
+    });
+  } catch (err) {
+    const errorData = err.response?.data || err.message || err;
+    console.error("❌ Error al crear preferencia:", errorData);
+    res.status(500).json({ error: "Error al generar preferencia de pago", detalle: errorData });
   }
 });
 
