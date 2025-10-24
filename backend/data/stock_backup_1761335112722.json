@@ -232,59 +232,5 @@
     "stock": 11,
     "thumbnail": "",
     "activo": false
-  },
-  {
-    "id": "brika",
-    "nombre": "BRIKA",
-    "precio": 14815,
-    "precio_anterior": 27407,
-    "stock": 46,
-    "thumbnail": "",
-    "activo": false
-  },
-  {
-    "id": "brunn",
-    "nombre": "BRUNN",
-    "precio": 5450,
-    "precio_anterior": 12642,
-    "stock": 124,
-    "thumbnail": "",
-    "activo": false
-  },
-  {
-    "id": "connor",
-    "nombre": "CONOR",
-    "precio": 7319,
-    "precio_anterior": 16977,
-    "stock": 30,
-    "thumbnail": "",
-    "activo": false
-  },
-  {
-    "id": "dayton",
-    "nombre": "DAYTON",
-    "precio": 9395,
-    "precio_anterior": 21793,
-    "stock": 17,
-    "thumbnail": "",
-    "activo": false
-  },
-  {
-    "id": "dino",
-    "nombre": "DINO",
-    "precio": 5278,
-    "precio_anterior": 12243,
-    "stock": 10,
-    "thumbnail": "",
-    "activo": false
-  },
-  {
-    "id": "moren",
-    "nombre": "MOREN",
-    "precio": 10517,
-    "precio_anterior": 24396,
-    "stock": 66,
-    "thumbnail": "",
-    "activo": false
   }
 ]

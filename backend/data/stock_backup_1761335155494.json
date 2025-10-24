@@ -234,9 +234,9 @@
     "activo": false
   },
   {
-    "id": "brika",
-    "nombre": "BRIKA",
-    "precio": 14815,
+    "id": "brikka",
+    "nombre": "BRIKKA",
+    "precio": 11815,
     "precio_anterior": 27407,
     "stock": 46,
     "thumbnail": "",
@@ -246,7 +246,7 @@
     "id": "brunn",
     "nombre": "BRUNN",
     "precio": 5450,
-    "precio_anterior": 12642,
+    "precio_anterior": 12.642,
     "stock": 124,
     "thumbnail": "",
     "activo": false

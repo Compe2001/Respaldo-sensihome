@@ -99,6 +99,7 @@ app.get("/api/stock", (req, res) => {
 // ┃ 🧾 Procesamiento de pedidos               ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 app.post('/api/process-order', (req, res) => {
+  const { saveOrderToSheetDB } = require('./utils/orderManager');
   const body = req.body;
   console.log('📨 Body recibido:', body);
 
@@ -135,13 +136,24 @@ app.post('/api/process-order', (req, res) => {
   // 🔧 Simulación de link de pago (será reemplazado por Mercado Pago real)
   const paymentLink = 'https://mercadopago.com.mx/checkout/v1/redirect?pref_id=simulated_' + Math.random().toString(36).slice(2);
 
-  res.json({ success: true, paymentLink });
+  
+  // Enviar a SheetDB sin bloquear la respuesta
+saveOrderToSheetDB({
+  nombre,
+  resumen_carrito,
+  total,
+  fecha,
+  direccion,
+  estado,
+  municipio,
+  codigo_postal,
+  correo,
+  telefono,
+  factura: body.factura || null
 });
 
-
-
-
-
+  res.json({ success: true, paymentLink });
+});
 
 
 
@@ -151,4 +163,6 @@ app.post('/api/process-order', (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Servidor SH corriendo en http://localhost:${PORT}`);
 });
+
+
 

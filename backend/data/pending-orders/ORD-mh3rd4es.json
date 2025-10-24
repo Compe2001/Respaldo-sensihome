@@ -1,0 +1,20 @@
+{
+  "orderId": "ORD-mh3rd4es",
+  "nombre": "CASIEL NICOLAS RODRIGUEZ VAZQUEZ",
+  "resumen_carrito": "SAHARA x1",
+  "total": 5500,
+  "fecha": "2025-10-23",
+  "direccion": "XV",
+  "estado": "pendiente",
+  "ciudad": "Zapopan",
+  "codigo_postal": "45130",
+  "correo": "casielrodriguez14@gmail.com",
+  "telefono": "3331408373",
+  "link_pago": "https://mercadopago.com.mx/checkout/v1/redirect?pref_id=simulated_88u985l3xu2",
+  "status": "pendiente",
+  "RFC": "",
+  "RAZON SOCIAL": "",
+  "CFDI": "",
+  "REGIMEN FISCAL": "",
+  "METODO DE PAGO": "desconocido"
+}

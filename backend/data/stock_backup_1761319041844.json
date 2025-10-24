@@ -1,0 +1,107 @@
+[
+  {
+    "id": "hanna",
+    "nombre": "HANNA",
+    "stock": 7,
+    "precio": 4999,
+    "precio_anterior": 9999
+  },
+  {
+    "id": "slate",
+    "nombre": "SLATE",
+    "stock": 2,
+    "precio": 7999,
+    "precio_anterior": null
+  },
+  {
+    "id": "osaka",
+    "nombre": "OSAKA",
+    "stock": 3,
+    "precio": 6500,
+    "precio_anterior": 6999
+  },
+  {
+    "id": "sahara",
+    "nombre": "SAHARA",
+    "stock": 4,
+    "precio": 5500,
+    "precio_anterior": 6999
+  },
+  {
+    "id": "noir",
+    "nombre": "NOIR",
+    "stock": 9,
+    "precio": 6500,
+    "precio_anterior": 6999
+  },
+  {
+    "id": "kanda",
+    "nombre": "KANDA",
+    "stock": 6,
+    "precio": 6500,
+    "precio_anterior": 6999
+  },
+  {
+    "id": "bubbly",
+    "nombre": "BUBBLY",
+    "stock": 6,
+    "precio": 6500,
+    "precio_anterior": 6999
+  },
+  {
+    "id": "bastian",
+    "nombre": "BASTIAN",
+    "stock": 6,
+    "precio": 6500,
+    "precio_anterior": 6999
+  },
+  {
+    "id": "vicent",
+    "nombre": "VICENT",
+    "stock": 6,
+    "precio": 6500,
+    "precio_anterior": null
+  },
+  {
+    "id": "brika",
+    "nombre": "BRIKA",
+    "stock": 10,
+    "precio": 11815,
+    "precio_anterior": 27407
+  },
+  {
+    "id": "brunn",
+    "nombre": "BRUNN",
+    "stock": 10,
+    "precio": 5450,
+    "precio_anterior": 12642
+  },
+  {
+    "id": "connor",
+    "nombre": "CONNOR",
+    "stock": 30,
+    "precio": 7319,
+    "precio_anterior": 16977
+  },
+  {
+    "id": "dayton",
+    "nombre": "DAYTON",
+    "stock": 17,
+    "precio": 9395,
+    "precio_anterior": 21793
+  },
+  {
+    "id": "dino",
+    "nombre": "DINO",
+    "stock": 10,
+    "precio": 5278,
+    "precio_anterior": 12243
+  },
+  {
+    "id": "moren",
+    "nombre": "MOREN",
+    "stock": 66,
+    "precio": 10517,
+    "precio_anterior": 24396
+  }
+]

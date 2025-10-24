@@ -1,0 +1,756 @@
+[
+  {
+    "timestamp": "2025-10-23T21:57:33.446Z",
+    "summary": {
+      "added": 0,
+      "removed": 13,
+      "updated": 2
+    },
+    "changes": {
+      "added": [],
+      "removed": [
+        {
+          "id": "slate",
+          "nombre": "SLATE",
+          "stock": 2,
+          "precio": 7999,
+          "precio_anterior": null
+        },
+        {
+          "id": "osaka",
+          "nombre": "OSAKA",
+          "stock": 3,
+          "precio": 6500,
+          "precio_anterior": 6999
+        },
+        {
+          "id": "sahara",
+          "nombre": "SAHARA",
+          "stock": 4,
+          "precio": 5500,
+          "precio_anterior": 6999
+        },
+        {
+          "id": "noir",
+          "nombre": "NOIR",
+          "stock": 9,
+          "precio": 6500,
+          "precio_anterior": 6999
+        },
+        {
+          "id": "kanda",
+          "nombre": "KANDA",
+          "stock": 6,
+          "precio": 6500,
+          "precio_anterior": 6999
+        },
+        {
+          "id": "bubbly",
+          "nombre": "BUBBLY",
+          "stock": 6,
+          "precio": 6500,
+          "precio_anterior": 6999
+        },
+        {
+          "id": "bastian",
+          "nombre": "BASTIAN",
+          "stock": 6,
+          "precio": 6500,
+          "precio_anterior": 6999
+        },
+        {
+          "id": "vicent",
+          "nombre": "VICENT",
+          "stock": 6,
+          "precio": 6500,
+          "precio_anterior": null
+        },
+        {
+          "id": "brunn",
+          "nombre": "BRUNN",
+          "stock": 10,
+          "precio": 5450,
+          "precio_anterior": 12642
+        },
+        {
+          "id": "connor",
+          "nombre": "CONNOR",
+          "stock": 30,
+          "precio": 7319,
+          "precio_anterior": 16977
+        },
+        {
+          "id": "dayton",
+          "nombre": "DAYTON",
+          "stock": 17,
+          "precio": 9395,
+          "precio_anterior": 21793
+        },
+        {
+          "id": "dino",
+          "nombre": "DINO",
+          "stock": 10,
+          "precio": 5278,
+          "precio_anterior": 12243
+        },
+        {
+          "id": "moren",
+          "nombre": "MOREN",
+          "stock": 66,
+          "precio": 10517,
+          "precio_anterior": 24396
+        }
+      ],
+      "updated": [
+        {
+          "id": "hanna",
+          "changes": {
+            "precio_anterior": {
+              "from": 9999,
+              "to": 5999
+            },
+            "stock": {
+              "from": 62,
+              "to": 6
+            },
+            "thumbnail": {
+              "from": null,
+              "to": ""
+            },
+            "activo": {
+              "from": null,
+              "to": false
+            }
+          }
+        },
+        {
+          "id": "brika",
+          "changes": {
+            "precio": {
+              "from": 11815,
+              "to": 1181510
+            },
+            "thumbnail": {
+              "from": null,
+              "to": ""
+            },
+            "activo": {
+              "from": null,
+              "to": false
+            }
+          }
+        }
+      ]
+    },
+    "backup": "stock_backup_1761256653448.json",
+    "source": "google-sheets"
+  },
+  {
+    "timestamp": "2025-10-24T15:17:21.844Z",
+    "summary": {
+      "added": 19,
+      "removed": 10,
+      "updated": 5
+    },
+    "changes": {
+      "added": [
+        {
+          "id": "aura",
+          "nombre": "AURA",
+          "precio": 2690,
+          "precio_anterior": 0,
+          "stock": 24,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "axia",
+          "nombre": "AXIA",
+          "precio": 2600,
+          "precio_anterior": 0,
+          "stock": 45,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "flux",
+          "nombre": "FLUX",
+          "precio": 2200,
+          "precio_anterior": 0,
+          "stock": 14,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "glide",
+          "nombre": "GLIDE",
+          "precio": 2160,
+          "precio_anterior": 0,
+          "stock": 22,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "jet",
+          "nombre": "JET",
+          "precio": 2145,
+          "precio_anterior": 4975,
+          "stock": 0,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "halo",
+          "nombre": "HALO",
+          "precio": 3400,
+          "precio_anterior": 7887,
+          "stock": 0,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "ivy",
+          "nombre": "IVY",
+          "precio": 2115,
+          "precio_anterior": 0,
+          "stock": 53,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "lumos",
+          "nombre": "LUMOS",
+          "precio": 3235,
+          "precio_anterior": 7504,
+          "stock": 40,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "luna",
+          "nombre": "LUNA",
+          "precio": 3700,
+          "precio_anterior": 0,
+          "stock": 11,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "malai",
+          "nombre": "MALAI",
+          "precio": 3490,
+          "precio_anterior": 8095,
+          "stock": 107,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "orbit",
+          "nombre": "ORBIT",
+          "precio": 3300,
+          "precio_anterior": 7655,
+          "stock": 43,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "pimua",
+          "nombre": "PIUMA",
+          "precio": 3425,
+          "precio_anterior": 7945,
+          "stock": 118,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "pivot",
+          "nombre": "PIVOT",
+          "precio": 3600,
+          "precio_anterior": 0,
+          "stock": 14,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "pulse",
+          "nombre": "PULSE",
+          "precio": 2900,
+          "precio_anterior": 6727,
+          "stock": 22,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "prism",
+          "nombre": "PRISM",
+          "precio": 2115,
+          "precio_anterior": 0,
+          "stock": 42,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "renaud",
+          "nombre": "RENAUD",
+          "precio": 3657,
+          "precio_anterior": 8483,
+          "stock": 63,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "selma",
+          "nombre": "SELMA",
+          "precio": 2395,
+          "precio_anterior": 5555,
+          "stock": 32,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "snug",
+          "nombre": "SNUG",
+          "precio": 3640,
+          "precio_anterior": 0,
+          "stock": 41,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "strata",
+          "nombre": "STRATA",
+          "precio": 4490,
+          "precio_anterior": 10415,
+          "stock": 65,
+          "thumbnail": "",
+          "activo": false
+        }
+      ],
+      "removed": [
+        {
+          "id": "hanna",
+          "nombre": "HANNA",
+          "stock": 7,
+          "precio": 4999,
+          "precio_anterior": 9999
+        },
+        {
+          "id": "noir",
+          "nombre": "NOIR",
+          "stock": 9,
+          "precio": 6500,
+          "precio_anterior": 6999
+        },
+        {
+          "id": "bastian",
+          "nombre": "BASTIAN",
+          "stock": 6,
+          "precio": 6500,
+          "precio_anterior": 6999
+        },
+        {
+          "id": "vicent",
+          "nombre": "VICENT",
+          "stock": 6,
+          "precio": 6500,
+          "precio_anterior": null
+        },
+        {
+          "id": "brika",
+          "nombre": "BRIKA",
+          "stock": 10,
+          "precio": 11815,
+          "precio_anterior": 27407
+        },
+        {
+          "id": "brunn",
+          "nombre": "BRUNN",
+          "stock": 10,
+          "precio": 5450,
+          "precio_anterior": 12642
+        },
+        {
+          "id": "connor",
+          "nombre": "CONNOR",
+          "stock": 30,
+          "precio": 7319,
+          "precio_anterior": 16977
+        },
+        {
+          "id": "dayton",
+          "nombre": "DAYTON",
+          "stock": 17,
+          "precio": 9395,
+          "precio_anterior": 21793
+        },
+        {
+          "id": "dino",
+          "nombre": "DINO",
+          "stock": 10,
+          "precio": 5278,
+          "precio_anterior": 12243
+        },
+        {
+          "id": "moren",
+          "nombre": "MOREN",
+          "stock": 66,
+          "precio": 10517,
+          "precio_anterior": 24396
+        }
+      ],
+      "updated": [
+        {
+          "id": "bubbly",
+          "changes": {
+            "precio": {
+              "from": 6500,
+              "to": 3300
+            },
+            "precio_anterior": {
+              "from": 6999,
+              "to": 0
+            },
+            "stock": {
+              "from": 6,
+              "to": 70
+            },
+            "thumbnail": {
+              "from": null,
+              "to": ""
+            },
+            "activo": {
+              "from": null,
+              "to": false
+            }
+          }
+        },
+        {
+          "id": "kanda",
+          "changes": {
+            "precio": {
+              "from": 6500,
+              "to": 3995
+            },
+            "precio_anterior": {
+              "from": 6999,
+              "to": 9267
+            },
+            "stock": {
+              "from": 6,
+              "to": 105
+            },
+            "thumbnail": {
+              "from": null,
+              "to": ""
+            },
+            "activo": {
+              "from": null,
+              "to": false
+            }
+          }
+        },
+        {
+          "id": "sahara",
+          "changes": {
+            "precio": {
+              "from": 5500,
+              "to": 3200
+            },
+            "precio_anterior": {
+              "from": 6999,
+              "to": 7423
+            },
+            "stock": {
+              "from": 4,
+              "to": 26
+            },
+            "thumbnail": {
+              "from": null,
+              "to": ""
+            },
+            "activo": {
+              "from": null,
+              "to": false
+            }
+          }
+        },
+        {
+          "id": "slate",
+          "changes": {
+            "precio": {
+              "from": 7999,
+              "to": 3400
+            },
+            "precio_anterior": {
+              "from": null,
+              "to": 7887
+            },
+            "stock": {
+              "from": 2,
+              "to": 43
+            },
+            "thumbnail": {
+              "from": null,
+              "to": ""
+            },
+            "activo": {
+              "from": null,
+              "to": false
+            }
+          }
+        },
+        {
+          "id": "osaka",
+          "changes": {
+            "precio": {
+              "from": 6500,
+              "to": 4200
+            },
+            "precio_anterior": {
+              "from": 6999,
+              "to": 9742
+            },
+            "stock": {
+              "from": 3,
+              "to": 29
+            },
+            "thumbnail": {
+              "from": null,
+              "to": ""
+            },
+            "activo": {
+              "from": null,
+              "to": false
+            }
+          }
+        }
+      ]
+    },
+    "backup": "stock_backup_1761319041844.json",
+    "source": "google-sheets"
+  },
+  {
+    "timestamp": "2025-10-24T15:32:54.944Z",
+    "summary": {
+      "added": 1,
+      "removed": 0,
+      "updated": 2
+    },
+    "changes": {
+      "added": [
+        {
+          "id": "hanna",
+          "nombre": "HANNA",
+          "precio": 4490,
+          "precio_anterior": 10415,
+          "stock": 65,
+          "thumbnail": "",
+          "activo": false
+        }
+      ],
+      "removed": [],
+      "updated": [
+        {
+          "id": "jet",
+          "changes": {
+            "stock": {
+              "from": 0,
+              "to": 66
+            }
+          }
+        },
+        {
+          "id": "halo",
+          "changes": {
+            "stock": {
+              "from": 0,
+              "to": 77
+            }
+          }
+        }
+      ]
+    },
+    "backup": "stock_backup_1761319974945.json",
+    "source": "google-sheets"
+  },
+  {
+    "timestamp": "2025-10-24T15:33:53.783Z",
+    "summary": {
+      "added": 1,
+      "removed": 0,
+      "updated": 0
+    },
+    "changes": {
+      "added": [
+        {
+          "id": "noir",
+          "nombre": "NOIR",
+          "precio": 3700,
+          "precio_anterior": 0,
+          "stock": 11,
+          "thumbnail": "",
+          "activo": false
+        }
+      ],
+      "removed": [],
+      "updated": []
+    },
+    "backup": "stock_backup_1761320033784.json",
+    "source": "google-sheets"
+  },
+  {
+    "timestamp": "2025-10-24T19:45:12.720Z",
+    "summary": {
+      "added": 6,
+      "removed": 0,
+      "updated": 0
+    },
+    "changes": {
+      "added": [
+        {
+          "id": "brikka",
+          "nombre": "BRIKKA",
+          "precio": 11815,
+          "precio_anterior": 27407,
+          "stock": 46,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "brunn",
+          "nombre": "BRUNN",
+          "precio": 5450,
+          "precio_anterior": 12.642,
+          "stock": 124,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "connor",
+          "nombre": "CONOR",
+          "precio": 7319,
+          "precio_anterior": 16977,
+          "stock": 30,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "dayton",
+          "nombre": "DAYTON",
+          "precio": 9395,
+          "precio_anterior": 21793,
+          "stock": 17,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "dino",
+          "nombre": "DINO",
+          "precio": 5278,
+          "precio_anterior": 12243,
+          "stock": 10,
+          "thumbnail": "",
+          "activo": false
+        },
+        {
+          "id": "moren",
+          "nombre": "MOREN",
+          "precio": 10517,
+          "precio_anterior": 24396,
+          "stock": 66,
+          "thumbnail": "",
+          "activo": false
+        }
+      ],
+      "removed": [],
+      "updated": []
+    },
+    "backup": "stock_backup_1761335112722.json",
+    "source": "google-sheets"
+  },
+  {
+    "timestamp": "2025-10-24T19:45:55.493Z",
+    "summary": {
+      "added": 1,
+      "removed": 1,
+      "updated": 0
+    },
+    "changes": {
+      "added": [
+        {
+          "id": "brika",
+          "nombre": "BRIKA",
+          "precio": 11815,
+          "precio_anterior": 27407,
+          "stock": 46,
+          "thumbnail": "",
+          "activo": false
+        }
+      ],
+      "removed": [
+        {
+          "id": "brikka",
+          "nombre": "BRIKKA",
+          "precio": 11815,
+          "precio_anterior": 27407,
+          "stock": 46,
+          "thumbnail": "",
+          "activo": false
+        }
+      ],
+      "updated": []
+    },
+    "backup": "stock_backup_1761335155494.json",
+    "source": "google-sheets"
+  },
+  {
+    "timestamp": "2025-10-24T19:46:23.387Z",
+    "summary": {
+      "added": 0,
+      "removed": 0,
+      "updated": 1
+    },
+    "changes": {
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "id": "brunn",
+          "changes": {
+            "precio_anterior": {
+              "from": 12.642,
+              "to": 12642
+            }
+          }
+        }
+      ]
+    },
+    "backup": "stock_backup_1761335183388.json",
+    "source": "google-sheets"
+  },
+  {
+    "timestamp": "2025-10-24T20:58:25.485Z",
+    "summary": {
+      "added": 0,
+      "removed": 0,
+      "updated": 1
+    },
+    "changes": {
+      "added": [],
+      "removed": [],
+      "updated": [
+        {
+          "id": "brika",
+          "changes": {
+            "precio": {
+              "from": 11815,
+              "to": 14815
+            }
+          }
+        }
+      ]
+    },
+    "backup": "stock_backup_1761339505486.json",
+    "source": "google-sheets"
+  }
+]

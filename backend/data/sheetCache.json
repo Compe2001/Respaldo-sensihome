@@ -1,0 +1,293 @@
+{
+  "timestamp": "2025-10-24T20:58:25.485Z",
+  "raw": [
+    {
+      "id": "aura",
+      "nombre": "AURA",
+      "precio": 2690,
+      "precioAnterior": 0,
+      "stock": 24,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "axia",
+      "nombre": "AXIA",
+      "precio": 2600,
+      "precioAnterior": 0,
+      "stock": 45,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "bubbly",
+      "nombre": "BUBBLY",
+      "precio": 3300,
+      "precioAnterior": 0,
+      "stock": 70,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "flux",
+      "nombre": "FLUX",
+      "precio": 2200,
+      "precioAnterior": 0,
+      "stock": 14,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "glide",
+      "nombre": "GLIDE",
+      "precio": 2160,
+      "precioAnterior": 0,
+      "stock": 22,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "jet",
+      "nombre": "JET",
+      "precio": 2145,
+      "precioAnterior": 4975,
+      "stock": 66,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "halo",
+      "nombre": "HALO",
+      "precio": 3400,
+      "precioAnterior": 7887,
+      "stock": 77,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "ivy",
+      "nombre": "IVY",
+      "precio": 2115,
+      "precioAnterior": 0,
+      "stock": 53,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "kanda",
+      "nombre": "KANDA",
+      "precio": 3995,
+      "precioAnterior": 9267,
+      "stock": 105,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "lumos",
+      "nombre": "LUMOS",
+      "precio": 3235,
+      "precioAnterior": 7504,
+      "stock": 40,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "luna",
+      "nombre": "LUNA",
+      "precio": 3700,
+      "precioAnterior": 0,
+      "stock": 11,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "malai",
+      "nombre": "MALAI",
+      "precio": 3490,
+      "precioAnterior": 8095,
+      "stock": 107,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "orbit",
+      "nombre": "ORBIT",
+      "precio": 3300,
+      "precioAnterior": 7655,
+      "stock": 43,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "pimua",
+      "nombre": "PIUMA",
+      "precio": 3425,
+      "precioAnterior": 7945,
+      "stock": 118,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "pivot",
+      "nombre": "PIVOT",
+      "precio": 3600,
+      "precioAnterior": 0,
+      "stock": 14,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "pulse",
+      "nombre": "PULSE",
+      "precio": 2900,
+      "precioAnterior": 6727,
+      "stock": 22,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "prism",
+      "nombre": "PRISM",
+      "precio": 2115,
+      "precioAnterior": 0,
+      "stock": 42,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "renaud",
+      "nombre": "RENAUD",
+      "precio": 3657,
+      "precioAnterior": 8483,
+      "stock": 63,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "selma",
+      "nombre": "SELMA",
+      "precio": 2395,
+      "precioAnterior": 5555,
+      "stock": 32,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "sahara",
+      "nombre": "SAHARA",
+      "precio": 3200,
+      "precioAnterior": 7423,
+      "stock": 26,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "slate",
+      "nombre": "SLATE",
+      "precio": 3400,
+      "precioAnterior": 7887,
+      "stock": 43,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "snug",
+      "nombre": "SNUG",
+      "precio": 3640,
+      "precioAnterior": 0,
+      "stock": 41,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "osaka",
+      "nombre": "OSAKA",
+      "precio": 4200,
+      "precioAnterior": 9742,
+      "stock": 29,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "strata",
+      "nombre": "STRATA",
+      "precio": 4490,
+      "precioAnterior": 10415,
+      "stock": 65,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "hanna",
+      "nombre": "HANNA",
+      "precio": 4490,
+      "precioAnterior": 10415,
+      "stock": 65,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "noir",
+      "nombre": "NOIR",
+      "precio": 3700,
+      "precioAnterior": 0,
+      "stock": 11,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "brika",
+      "nombre": "BRIKA",
+      "precio": 14815,
+      "precioAnterior": 27407,
+      "stock": 46,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "brunn",
+      "nombre": "BRUNN",
+      "precio": 5450,
+      "precioAnterior": 12642,
+      "stock": 124,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "connor",
+      "nombre": "CONOR",
+      "precio": 7319,
+      "precioAnterior": 16977,
+      "stock": 30,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "dayton",
+      "nombre": "DAYTON",
+      "precio": 9395,
+      "precioAnterior": 21793,
+      "stock": 17,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "dino",
+      "nombre": "DINO",
+      "precio": 5278,
+      "precioAnterior": 12243,
+      "stock": 10,
+      "thumbnail": "",
+      "activo": false
+    },
+    {
+      "id": "moren",
+      "nombre": "MOREN",
+      "precio": 10517,
+      "precioAnterior": 24396,
+      "stock": 66,
+      "thumbnail": "",
+      "activo": false
+    }
+  ]
+}
