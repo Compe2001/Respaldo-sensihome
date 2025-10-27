@@ -63,7 +63,11 @@ app.use('/api', mercadoPagoRoutes);
 console.log("🧪 Tipo de mercadoPagoRoutes:", typeof mercadoPagoRoutes);
 console.log("🧪 Contenido:", mercadoPagoRoutes);
 
-
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+// ┃ costo envios┃✨
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+const enviosRoutes = require('./routes/envios');
+app.use('/api/envios', enviosRoutes);
 
 //log de rutas
 console.log("🧭 Rutas activas en el backend:");

@@ -1,7 +1,7 @@
-// routes/mercadopago.js
 const express = require('express');
 const router = express.Router();
 const { MercadoPagoConfig, Preference } = require('mercadopago');
+const { saveOrderToSheetDB } = require('../utils/orderManager'); // Asegúrate que esta ruta sea correcta
 
 // 🛡️ Validación defensiva del token
 const ACCESS_TOKEN = process.env.MP_ACCESS_TOKEN;
@@ -13,6 +13,7 @@ if (!ACCESS_TOKEN) {
 // ✅ Inicialización moderna del cliente
 const client = new MercadoPagoConfig({ accessToken: ACCESS_TOKEN });
 
+//CREAR PREFERENCIA DE PAGO
 router.post('/crear-preferencia', async (req, res) => {
   const { carrito, ...cliente } = req.body;
 
@@ -27,33 +28,49 @@ router.post('/crear-preferencia', async (req, res) => {
     currency_id: "MXN"
   }));
 
+  const total = items.reduce((acc, item) => acc + item.unit_price * item.quantity, 0);
+
+  // 🧪 Validación defensiva de FRONTEND_URL
+  const FRONTEND_URL = process.env.FRONTEND_URL;
+  if (!FRONTEND_URL || !/^https?:\/\/.+/.test(FRONTEND_URL)) {
+    console.error("❌ FRONTEND_URL mal definido:", FRONTEND_URL);
+    return res.status(500).json({ error: "FRONTEND_URL no está definido o es inválido" });
+  }
+
+  const backUrls = {
+    success: 'https://www.google.com',
+    failure: `${FRONTEND_URL}/error.html`,
+    pending: `${FRONTEND_URL}/pendiente.html`
+  };
+
+  console.log("🔗 back_urls:", backUrls);
+
   try {
     const preference = await new Preference(client).create({
       body: {
         items,
-        back_urls: {
-          success: "https://tusitio.com/success.html",
-          failure: "https://tusitio.com/error.html",
-          pending: "https://tusitio.com/pendiente.html"
-        },
+        back_urls: backUrls,
         auto_return: "approved",
         metadata: {
           correo: cliente.correo,
-          fecha: cliente.fecha,
+          referencia: cliente.nombre,
           carrito: JSON.stringify(carrito)
         }
       }
     });
 
-    res.json({
-      success: true,
-      init_point: preference.init_point,
-      preferenceId: preference.id
+    await saveOrderToSheetDB({
+      ...cliente,
+      carrito,
+      total,
+      fecha: new Date().toISOString(),
+      metodo_de_pago: 'mercadopago'
     });
+
+    res.json({ success: true, init_point: preference.init_point });
   } catch (err) {
-    const errorData = err.response?.data || err.message || err;
-    console.error("❌ Error al crear preferencia:", errorData);
-    res.status(500).json({ error: "Error al generar preferencia de pago", detalle: errorData });
+    console.error("❌ Error al crear preferencia o registrar pedido:", err);
+    res.status(500).json({ error: err.message || "Error al generar preferencia de pago" });
   }
 });
 

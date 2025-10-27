@@ -1,8 +1,12 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const resumenDiv = document.getElementById("resumen-pedido");
-const host = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-      ? 'http://localhost:3000'
-      : `https://api.${window.location.hostname}`;
+(() => {
+  const host = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:3000'
+    : `https://api.${window.location.hostname}`;
+
+  // ... resto del código
+})();
 
 function renderResumen() {
   const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);

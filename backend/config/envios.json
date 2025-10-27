@@ -1,8 +1,23 @@
 {
-  "Zapopan": 99,
-  "Tonalá": 129,
-  "Tlaquepaque": 119,
-  "Tlajomulco": 139,
-  "Guadalajara": 109,
-  "El Salto": 149
+  "Guadalajara": 60,
+  "Zapopan": 60,
+  "Tlaquepaque": 60,
+  "El Salto": 70,
+  "Tlajomulco": 70,
+  "Ameca": 90,
+
+  
+  "Tonala": 65,
+  "San Pedro Tlaquepaque": 60,
+  "Santa Anita": 70,
+  "San Agustin": 70,
+  "Las Pintas": 70,
+  "Tesistán": 75,
+  "Santa Cruz del Valle": 75,
+  "San Isidro": 75,
+  "Acatlán de Juárez": 85,
+  "Villa Corona": 85,
+  "Chapala": 95,
+  "Ajijic": 95,
+  "Ixtlahuacán de los Membrillos": 90
 }
