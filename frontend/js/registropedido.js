@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const host = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? 'http://localhost:3000'
+      : `https://api.${window.location.hostname}`;
   const carritoRaw = JSON.parse(localStorage.getItem("carrito")) || [];
   const carritoSanitizado = carritoRaw.map(item => ({
     nombre: item.nombre,
@@ -64,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("🚀 Enviando datos al backend...", data);
 
     try {
-     const response = await fetch("http://localhost:3000/api/crear-preferencia", {
+     const response = await fetch(`${host}/api/crear-preferencia`, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(data)

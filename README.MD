@@ -25,3 +25,20 @@ Se confirmó que el registro de pedido funciona correctamente y no se ve afectad
 Se propuso y estructuró un sistema de caché en el backend para evitar lecturas repetidas del archivo stock.json, con renovación cada 5 minutos
 
 -Implementación de la semana- condicionante de  sumatoria en el menpu carrito, 
+
+
+
+## Pasos para deploy
+
+1. Conectarnos por ssh a VPS
+2. Instalar nodejs, nginx
+3. Clonar repositorio
+4. Agregamos el archivo de configuración de nginx a esta ruta: /etc/nginx/conf.d/
+5. Agregar certificados ssl a estas rutas:
+
+```nginx
+ssl_certificate /etc/letsencrypt/live/api.sensihome.com/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/api.sensihome.com/privkey.pem;
+```
+
+6. Encender el server

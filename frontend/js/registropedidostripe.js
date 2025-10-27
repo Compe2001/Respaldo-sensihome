@@ -1,5 +1,8 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const resumenDiv = document.getElementById("resumen-pedido");
+const host = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? 'http://localhost:3000'
+      : `https://api.${window.location.hostname}`;
 
 function renderResumen() {
   const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
@@ -44,7 +47,7 @@ let elements;
 let clientSecret;
 
 async function crearIntentoPago(carrito, datosCliente) {
-  const response = await fetch("http://localhost:3000/api/crear-intento-pago", {
+  const response = await fetch(`${host}/api/crear-intento-pago`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ carrito, datosCliente })
@@ -135,7 +138,7 @@ if (pedidoForm) {
     console.log("🚀 Enviando datos al backend...", data);
 
     try {
-      const response = await fetch("http://localhost:3000/api/process-order", {
+      const response = await fetch(`${host}/api/process-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)

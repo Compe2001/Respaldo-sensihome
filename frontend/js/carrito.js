@@ -1,7 +1,9 @@
 // =============================================
 // 🛒 MÓDULO PRINCIPAL DEL CARRITO DE COMPRAS
 // =============================================
-
+const host = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? 'http://localhost:3000'
+      : `https://api.${window.location.hostname}`;
 /**
  * GESTOR PRINCIPAL DEL CARRITO
  * Inicializa y coordina todas las funcionalidades del carrito
@@ -34,7 +36,7 @@ class CarritoManager {
    * @returns {Promise} Promesa con los datos del stock
    */
   cargarStock() {
-    return fetch("http://localhost:3000/api/stock")
+    return fetch(`${host}/api/stock`)
       .then(res => {
         if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
         return res.json();
@@ -334,7 +336,7 @@ botones.forEach(boton => {
 
 async function sincronizarCarritoConStock() {
   try {
-    const res = await fetch("http://localhost:3000/api/stock");
+    const res = await fetch(`${host}/api/stock`);
     const stockActual = await res.json();
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
