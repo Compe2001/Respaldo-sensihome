@@ -21,7 +21,7 @@
     "id": "bubbly",
     "nombre": "BUBBLY",
     "precio": 3300,
-    "precio_anterior": 0,
+    "precio_anterior": 10,
     "stock": 70,
     "thumbnail": "",
     "activo": false

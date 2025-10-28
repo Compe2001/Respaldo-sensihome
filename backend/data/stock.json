@@ -76,7 +76,7 @@
     "nombre": "KANDA",
     "precio": 3995,
     "precio_anterior": 9267,
-    "stock": 105,
+    "stock": 0,
     "thumbnail": "",
     "activo": false
   },
@@ -174,7 +174,7 @@
     "id": "sahara",
     "nombre": "SAHARA",
     "precio": 3200,
-    "precio_anterior": 7423,
+    "precio_anterior": 9999,
     "stock": 26,
     "thumbnail": "",
     "activo": false
@@ -210,7 +210,7 @@
     "id": "strata",
     "nombre": "STRATA",
     "precio": 4490,
-    "precio_anterior": 10415,
+    "precio_anterior": null,
     "stock": 65,
     "thumbnail": "",
     "activo": false

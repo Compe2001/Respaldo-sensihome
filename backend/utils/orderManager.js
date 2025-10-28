@@ -20,12 +20,15 @@ async function saveOrderToSheetDB(order) {
   const costoEnvio = Number(order.costo_envio ?? envios[zona] ?? 0);
   const total = Number(order.total ?? (subtotal + costoEnvio));
 
-  // Construir resumen de carrito
+  // Construir resumen de carrito y representaciones adicionales
   const resumen_carrito = carrito.map(i => `${i.nombre} x${i.cantidad}`).join(', ');
+  const items_list = carrito.map(i => `${i.nombre} x${i.cantidad} ($${Number(i.precio)})`).join('; ');
+  const carrito_json = JSON.stringify(carrito);
 
   // Construir payload con campos explícitos (asegúrate que los nombres coincidan con tus headers en la hoja)
   const payload = {
     data: [{
+      // Campos básicos del formulario
       fecha: order.fecha || new Date().toISOString().split('T')[0],
       nombre: order.nombre || '',
       correo: order.correo || '',
@@ -34,17 +37,25 @@ async function saveOrderToSheetDB(order) {
       municipio: order.municipio || '',
       estado: order.estado || '',
       codigo_postal: order.codigo_postal || '',
+
+      // Carrito / productos
       resumen_carrito,
+      items_list,
+      carrito_json,
+
+      // Montos
       subtotal,
-      costo_envio: costoEnvio,    // <-- incluido explícitamente
+      costo_envio: costoEnvio,
       total,
-      status: 'pendiente',
+
+      // Facturación / extra
       factura: order.factura ? JSON.stringify(order.factura) : '',
-      METODO_DE_PAGO: order.metodo_pago || 'stripe'
+      METODO_DE_PAGO: order.metodo_pago || 'stripe',
+      status: 'pendiente'
     }]
   };
 
-  // Logs de depuración (temporales)
+  // Logs de depuración (temporal)
   console.log('📤 Payload a SheetDB:', JSON.stringify(payload, null, 2));
 
   try {
@@ -53,7 +64,6 @@ async function saveOrderToSheetDB(order) {
     });
 
     console.log('✅ Pedido enviado a SheetDB:', response.data);
-    // Retornar la respuesta para que el caller pueda verificar
     return { ok: true, data: response.data };
   } catch (error) {
     console.error('❌ Error al enviar a SheetDB:', error.response?.data || error.message);
