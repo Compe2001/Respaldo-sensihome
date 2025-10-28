@@ -105,7 +105,7 @@ app.get("/api/stock", (req, res) => {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🧾 Procesamiento de pedidos               ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-app.post('/api/process-order', (req, res) => {
+app.post('/api/process-order', async (req, res) => {
   const { saveOrderToSheetDB } = require('./utils/orderManager');
   const body = req.body;
   console.log('📨 Body recibido:', body);
@@ -123,7 +123,9 @@ app.post('/api/process-order', (req, res) => {
     municipio = "",
     estado = "",
     codigo_postal = "",
-    carrito = []
+    carrito = [],
+    costo_envio: costoEnvioFromClient = 0,
+    total: totalFromClient
   } = body;
 
   if (!Array.isArray(carrito) || carrito.length === 0) {
@@ -134,34 +136,50 @@ app.post('/api/process-order', (req, res) => {
     return res.status(400).json({ error: 'Cada item debe tener precio y cantidad numéricos' });
   }
 
-  const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
+  // Recalcular subtotal en backend (fuente de la verdad)
+  const subtotal = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
+  const costo_envio = Number(costoEnvioFromClient || 0);
+  const total = Number(totalFromClient ?? (subtotal + costo_envio));
+
   const resumen_carrito = carrito.map(item => `${item.nombre} x${item.cantidad}`).join(', ');
 
-  console.log('Pedido recibido:', { nombre, resumen_carrito, total, status: 'pendiente' });
+  console.log('Pedido recibido (server):', { nombre, resumen_carrito, subtotal, costo_envio, total, status: 'pendiente' });
 
-  // 🔧 Simulación de link de pago (será reemplazado por Mercado Pago real)
-  const paymentLink = 'https://mercadopago.com.mx/checkout/v1/redirect?pref_id=simulated_' + Math.random().toString(36).slice(2);
+  // Construir row explícito para SheetDB (ajusta los nombres de campos si tu hoja usa otros encabezados)
+  const row = {
+    fecha: fecha || new Date().toISOString().split('T')[0],
+    nombre: nombre || '',
+    correo: correo || '',
+    telefono: telefono || '',
+    direccion: direccion || '',
+    municipio: municipio || '',
+    estado: estado || '',
+    codigo_postal: codigo_postal || '',
+    resumen_carrito,
+    subtotal,
+    costo_envio,
+    total,
+    status: 'pendiente',
+    factura: body.factura ? JSON.stringify(body.factura) : null
+  };
 
-  
-  // Enviar a SheetDB sin bloquear la respuesta
-saveOrderToSheetDB({
-  nombre,
-  resumen_carrito,
-  total,
-  fecha,
-  direccion,
-  estado,
-  municipio,
-  codigo_postal,
-  correo,
-  telefono,
-  factura: body.factura || null
+  try {
+    // Log payload que enviaremos (temporal para depuración)
+    console.log('📤 Payload a SheetDB:', JSON.stringify(row));
+
+    // saveOrderToSheetDB debe aceptar el objeto row; si espera { data: row } o diferente, adapta aquí.
+    const sheetResult = await saveOrderToSheetDB(row);
+
+    // Log respuesta de SheetDB (útil para ver si SheetDB está ignorando campos)
+    console.log('✅ Pedido enviado a SheetDB:', sheetResult);
+
+    // Responder al frontend; puedes incluir sheetResult si lo necesitas
+    return res.json({ success: true, sheetResult, total });
+  } catch (err) {
+    console.error('❌ Error al guardar en SheetDB:', err);
+    return res.status(500).json({ error: 'No se pudo guardar el pedido en SheetDB' });
+  }
 });
-
-  res.json({ success: true, paymentLink });
-});
-
-
 
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🚀 Inicio del servidor                    ┃

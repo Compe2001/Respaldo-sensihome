@@ -1,50 +1,63 @@
 // backend/utils/orderManager.js
 const axios = require('axios');
 const SHEETDB_URL = process.env.SHEETDB_ENDPOINT;
-const envios = require('../config/envios.json'); // ajusta la ruta si es diferente
+const envios = require('../config/envios.json');
 
-
+/**
+ * Guarda un pedido en SheetDB.
+ * Acepta un objeto `order` y envía a SheetDB un row con campos explícitos.
+ */
 async function saveOrderToSheetDB(order) {
   if (!SHEETDB_URL) {
     console.warn('❌ SHEETDB_ENDPOINT no definido en .env');
-    return;
+    return { ok: false, reason: 'no_sheetdb_url' };
   }
 
+  // Normalizar y calcular
+  const carrito = Array.isArray(order.carrito) ? order.carrito : [];
+  const subtotal = carrito.reduce((s, it) => s + (Number(it.precio) || 0) * (Number(it.cantidad) || 0), 0);
+  const zona = (order.municipio || '').toString().trim();
+  const costoEnvio = Number(order.costo_envio ?? envios[zona] ?? 0);
+  const total = Number(order.total ?? (subtotal + costoEnvio));
 
-//OBTENER COSTO DE ENVIO CONSTANTES
-const zona = order.municipio?.trim();
-const costoEnvio = envios[zona] || 0;
+  // Construir resumen de carrito
+  const resumen_carrito = carrito.map(i => `${i.nombre} x${i.cantidad}`).join(', ');
 
-
-
+  // Construir payload con campos explícitos (asegúrate que los nombres coincidan con tus headers en la hoja)
   const payload = {
     data: [{
+      fecha: order.fecha || new Date().toISOString().split('T')[0],
       nombre: order.nombre || '',
-      resumen_carrito: order.resumen_carrito || '',
-      total: Number(order.total || 0),
-      fecha: order.fecha || new Date().toISOString(),
-      direccion: order.direccion || '',
-      estado: order.estado || '',
-      ciudad: order.municipio || '',
-      codigo_postal: order.codigo_postal || '',
       correo: order.correo || '',
       telefono: order.telefono || '',
+      direccion: order.direccion || '',
+      municipio: order.municipio || '',
+      estado: order.estado || '',
+      codigo_postal: order.codigo_postal || '',
+      resumen_carrito,
+      subtotal,
+      costo_envio: costoEnvio,    // <-- incluido explícitamente
+      total,
       status: 'pendiente',
-      RFC: order.factura?.rfc || '',
-      "RAZON SOCIAL": order.factura?.razon_social || '',
-      CFDI: order.factura?.uso_cfdi || '',
-      "REGIMEN FISCAL": order.factura?.regimen_fiscal || '',
-      "METODO DE PAGO": 'stripe' // fijo por ahora
+      factura: order.factura ? JSON.stringify(order.factura) : '',
+      METODO_DE_PAGO: order.metodo_pago || 'stripe'
     }]
   };
+
+  // Logs de depuración (temporales)
+  console.log('📤 Payload a SheetDB:', JSON.stringify(payload, null, 2));
 
   try {
     const response = await axios.post(SHEETDB_URL, payload, {
       headers: { 'Content-Type': 'application/json' }
     });
+
     console.log('✅ Pedido enviado a SheetDB:', response.data);
+    // Retornar la respuesta para que el caller pueda verificar
+    return { ok: true, data: response.data };
   } catch (error) {
     console.error('❌ Error al enviar a SheetDB:', error.response?.data || error.message);
+    return { ok: false, error: error.response?.data || error.message };
   }
 }
 

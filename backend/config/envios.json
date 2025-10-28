@@ -1,12 +1,10 @@
 {
-  "Guadalajara": 60,
+  "Guadalajara": 90,
   "Zapopan": 60,
   "Tlaquepaque": 60,
   "El Salto": 70,
   "Tlajomulco": 70,
   "Ameca": 90,
-
-  
   "Tonala": 65,
   "San Pedro Tlaquepaque": 60,
   "Santa Anita": 70,
@@ -20,4 +18,11 @@
   "Chapala": 95,
   "Ajijic": 95,
   "Ixtlahuacán de los Membrillos": 90
+
+
+
+
+
+
+  
 }
