@@ -77,8 +77,6 @@ app._router?.stack?.forEach(r => {
   }
 });
 
-
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🧪 Ruta de salud                           ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -88,7 +86,6 @@ app.get('/api/health', (req, res) => {
     environment: process.env.NODE_ENV || 'development',
   });
 });
-
 
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 📦 Consulta de stock local                ┃
@@ -105,7 +102,6 @@ app.get("/api/stock", (req, res) => {
   }
 });
 
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🧾 Procesamiento de pedidos               ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -118,7 +114,6 @@ app.post('/api/process-order', (req, res) => {
     return res.status(400).json({ error: 'Body vacío o malformado' });
   }
 
-  
   const {
     fecha = "",
     nombre = "",
