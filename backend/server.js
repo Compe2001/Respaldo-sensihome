@@ -146,29 +146,29 @@ app.post('/api/process-order', async (req, res) => {
   console.log('Pedido recibido (server):', { nombre, resumen_carrito, subtotal, costo_envio, total, status: 'pendiente' });
 
   // Construir row explícito para SheetDB (ajusta los nombres de campos si tu hoja usa otros encabezados)
-  const row = {
-    fecha: fecha || new Date().toISOString().split('T')[0],
-    nombre: nombre || '',
-    correo: correo || '',
-    telefono: telefono || '',
-    direccion: direccion || '',
-    municipio: municipio || '',
-    estado: estado || '',
-    codigo_postal: codigo_postal || '',
-    resumen_carrito,
-    subtotal,
-    costo_envio,
-    total,
-    status: 'pendiente',
-    factura: body.factura ? JSON.stringify(body.factura) : null
-  };
-
+const order = {
+  fecha,
+  nombre,
+  correo,
+  telefono,
+  direccion,
+  municipio,
+  estado,
+  codigo_postal,
+  carrito,
+  costo_envio,
+  total,
+  factura: body.factura || null,
+  metodo_pago: 'stripe'
+};
   try {
     // Log payload que enviaremos (temporal para depuración)
-    console.log('📤 Payload a SheetDB:', JSON.stringify(row));
+console.log('📤 Order enviado a saveOrderToSheetDB:', JSON.stringify(order, null, 2));
+
+
 
     // saveOrderToSheetDB debe aceptar el objeto row; si espera { data: row } o diferente, adapta aquí.
-    const sheetResult = await saveOrderToSheetDB(row);
+    const sheetResult = await saveOrderToSheetDB(order);
 
     // Log respuesta de SheetDB (útil para ver si SheetDB está ignorando campos)
     console.log('✅ Pedido enviado a SheetDB:', sheetResult);
