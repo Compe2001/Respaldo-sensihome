@@ -13,13 +13,24 @@ router.post('/crear-intento-pago', async (req, res) => {
       return res.status(400).json({ error: 'Carrito vacío o malformado' });
     }
 
-    const total = carrito.reduce((sum, item) => {
-      const precio = Number(item.precio);
-      const cantidad = Number(item.cantidad);
-      if (!Number.isFinite(precio) || !Number.isFinite(cantidad)) throw new Error("Item inválido");
-      return sum + precio * cantidad;
-    }, 0);
-    const amount = Math.round(total * 100);
+  const subtotal = carrito.reduce((sum, item) => {
+  const precio = Number(item.precio);
+  const cantidad = Number(item.cantidad);
+  if (!Number.isFinite(precio) || !Number.isFinite(cantidad)) throw new Error("Item inválido");
+  return sum + precio * cantidad;
+}, 0);
+
+console.log('🧪 Datos recibidos en Stripe:', {
+  carrito,
+  datosCliente,
+  costoEnvio
+});
+
+
+const costoEnvio = Number(datosCliente.costo_envio || 0);
+const total = subtotal + costoEnvio;
+const amount = Math.round(total * 100); // Stripe cobra en centavos
+
 
     const producto = carrito[0]?.nombre || "Pedido Sensi";
 
@@ -34,7 +45,18 @@ router.post('/crear-intento-pago', async (req, res) => {
       amount,
       currency: 'mxn',
       automatic_payment_methods: { enabled: true },
-      metadata
+      metadata:{
+       producto,
+      fecha: new Date().toISOString().split("T")[0],
+      nombre: String(datosCliente.nombre || "").slice(0, 480),
+      correo: String(datosCliente.correo || "").slice(0, 480),
+      carrito: JSON.stringify(carrito),
+      costo_envio: String(costoEnvio),
+      subtotal: String(subtotal),
+      total: String(total)
+
+      }
+
     });
 
     res.json({

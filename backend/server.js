@@ -26,7 +26,6 @@ app.use(helmet({
     }
   }
 }));
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🌐 Servir frontend estático                ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -164,8 +163,6 @@ const order = {
   try {
     // Log payload que enviaremos (temporal para depuración)
 console.log('📤 Order enviado a saveOrderToSheetDB:', JSON.stringify(order, null, 2));
-
-
 
     // saveOrderToSheetDB debe aceptar el objeto row; si espera { data: row } o diferente, adapta aquí.
     const sheetResult = await saveOrderToSheetDB(order);
