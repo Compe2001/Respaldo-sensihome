@@ -13,6 +13,8 @@ router.post('/crear-intento-pago', async (req, res) => {
       return res.status(400).json({ error: 'Carrito vacío o malformado' });
     }
 
+
+  
   const subtotal = carrito.reduce((sum, item) => {
   const precio = Number(item.precio);
   const cantidad = Number(item.cantidad);
@@ -20,16 +22,18 @@ router.post('/crear-intento-pago', async (req, res) => {
   return sum + precio * cantidad;
 }, 0);
 
+
+
+const costoEnvio = Number(datosCliente.costo_envio || 0);
+const total = subtotal + costoEnvio;
+const amount = Math.round(total * 100); // Stripe cobra en centavos
+
 console.log('🧪 Datos recibidos en Stripe:', {
   carrito,
   datosCliente,
   costoEnvio
 });
 
-
-const costoEnvio = Number(datosCliente.costo_envio || 0);
-const total = subtotal + costoEnvio;
-const amount = Math.round(total * 100); // Stripe cobra en centavos
 
 
     const producto = carrito[0]?.nombre || "Pedido Sensi";
