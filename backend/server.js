@@ -125,6 +125,7 @@ app.post('/api/process-order', async (req, res) => {
     carrito = [],
     costo_envio: costoEnvioFromClient = 0,
     total: totalFromClient
+  
   } = body;
 
   if (!Array.isArray(carrito) || carrito.length === 0) {
@@ -145,6 +146,19 @@ app.post('/api/process-order', async (req, res) => {
   console.log('Pedido recibido (server):', { nombre, resumen_carrito, subtotal, costo_envio, total, status: 'pendiente' });
 
   // Construir row explícito para SheetDB (ajusta los nombres de campos si tu hoja usa otros encabezados)
+// Desestructurar datos de facturación si existen
+const {
+  rfc = "",
+  razon_social = "",
+  uso_cfdi = "",
+  regimen_fiscal = "",
+  domicilio_fiscal = ""
+} = body.factura || {};
+
+
+console.log('🧾 Datos de facturación:', { rfc, razon_social, uso_cfdi });
+
+// Construir row explícito para SheetDB
 const order = {
   fecha,
   nombre,
@@ -157,9 +171,15 @@ const order = {
   carrito,
   costo_envio,
   total,
-  factura: body.factura || null,
+  rfc,
+  razon_social,
+  uso_cfdi,
+  regimen_fiscal,
+  domicilio_fiscal,
   metodo_pago: 'stripe'
 };
+
+
   try {
     // Log payload que enviaremos (temporal para depuración)
 console.log('📤 Order enviado a saveOrderToSheetDB:', JSON.stringify(order, null, 2));
@@ -181,6 +201,7 @@ console.log('📤 Order enviado a saveOrderToSheetDB:', JSON.stringify(order, nu
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🚀 Inicio del servidor                    ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
 app.listen(PORT, () => {
   console.log(`🚀 Servidor SH corriendo en http://localhost:${PORT}`);
 });

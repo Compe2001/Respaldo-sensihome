@@ -49,7 +49,13 @@ async function saveOrderToSheetDB(order) {
       total,
 
       // Facturación / extra
-      factura: order.factura ? JSON.stringify(order.factura) : '',
+     rfc: order.rfc || '',
+     razon_social: order.razon_social || '',
+     uso_cfdi: order.uso_cfdi || '',
+     regimen_fiscal: order.regimen_fiscal || '',
+     domicilio_fiscal: order.domicilio_fiscal || '',
+
+
       METODO_DE_PAGO: order.metodo_pago || 'stripe',
       status: 'pendiente'
     }]
