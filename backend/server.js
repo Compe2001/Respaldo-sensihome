@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 3000;
 const path = require("path");
 const fs = require("fs");
 const helmet = require("helmet");
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🛡️ Seguridad: Helmet + CSP para Stripe     ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -30,11 +29,9 @@ app.use(helmet({
 // ┃ 🌐 Servir frontend estático                ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 app.use(express.static(path.join(__dirname, "../frontend")));
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🧩 Middlewares globales                   ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
 let origin = ['http://127.0.0.1:5500','http://localhost:5500','http://localhost:3000', process.env.FRONTEND_URL];
 
 if (process.env.NODE_ENV === 'production') {
@@ -46,13 +43,11 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 💳 Stripe: intento de pago (módulo externo)┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 const stripeRoutes = require('./routes/stripe');
 app.use('/api', stripeRoutes);
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 💰 Mercado Pago: preferencia (módulo externo)┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -61,13 +56,11 @@ app.use('/api', mercadoPagoRoutes);
 
 console.log("🧪 Tipo de mercadoPagoRoutes:", typeof mercadoPagoRoutes);
 console.log("🧪 Contenido:", mercadoPagoRoutes);
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ costo envios┃✨
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 const enviosRoutes = require('./routes/envios');
 app.use('/api/envios', enviosRoutes);
-
 //log de rutas
 console.log("🧭 Rutas activas en el backend:");
 app._router?.stack?.forEach(r => {
@@ -75,9 +68,8 @@ app._router?.stack?.forEach(r => {
     console.log("→", r.route.path);
   }
 });
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-// ┃ 🧪 Ruta de salud                           ┃
+// ┃ 🧪 Ruta de salud                          
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 app.get('/api/health', (req, res) => {
   res.json({
@@ -179,7 +171,6 @@ const order = {
   metodo_pago: 'stripe'
 };
 
-
   try {
     // Log payload que enviaremos (temporal para depuración)
 console.log('📤 Order enviado a saveOrderToSheetDB:', JSON.stringify(order, null, 2));
@@ -197,11 +188,9 @@ console.log('📤 Order enviado a saveOrderToSheetDB:', JSON.stringify(order, nu
     return res.status(500).json({ error: 'No se pudo guardar el pedido en SheetDB' });
   }
 });
-
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 // ┃ 🚀 Inicio del servidor                    ┃
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
 app.listen(PORT, () => {
   console.log(`🚀 Servidor SH corriendo en http://localhost:${PORT}`);
 });

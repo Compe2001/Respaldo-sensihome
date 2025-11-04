@@ -50,7 +50,7 @@ console.log('🧪 Datos recibidos en Stripe:', {
       currency: 'mxn',
       automatic_payment_methods: { enabled: true },
       metadata:{
-       producto,
+      producto,
       fecha: new Date().toISOString().split("T")[0],
       nombre: String(datosCliente.nombre || "").slice(0, 480),
       correo: String(datosCliente.correo || "").slice(0, 480),
