@@ -92,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tipo: "sala_modular",
       nombre: thumbnail.dataset.nombre || "SALA MODULAR",
       modulos,
-      total
+      total,
+      cantidad: 1
     };
 
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
