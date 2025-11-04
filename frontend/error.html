@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sucursal - Sensi Home</title>
+<link rel="icon" href="/images/logo-blanco.png" type="image/x-icon">
+  <link href="/css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
+  <link href="/css/notifications.css" rel="stylesheet" type="text/css">
+  <link href="/css/thumbnails.css" rel="stylesheet" type="text/css">
+  <link href="/css/buttons.css" rel="stylesheet" type="text/css">
+   <link href="/css/sucursal.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+    <header class="header"> 
+      <a href="/index.html" class="sectiona1">
+        <img src="/images/logo-blanco.png" class="homebutton" alt="Inicio">
+        </a>
+	 
+	<form id="searchForm" class="search-bar">
+  <input 
+    class="search-bar-input" 
+    type="search" 
+    name="q" 
+    placeholder="🔍 Buscar en Sensi Home" 
+    aria-label="Search" 
+    required
+  >
+  <button type="submit">
+    Buscar
+  </button>
+  </form>
+
+<!-- CARRITO -->
+<button onclick="window.location.href='carrito.html'" class="carrito-button animate__animated animate__bounceIn"> 
+  <img src="/images/carrito.png" alt="Carrito">
+  <span class="carrito-count">0</span>
+</button>
+
+<div class="social-buttons">
+	   <a href="https://www.instagram.com/sensi.home.mx/">
+		 <img src= "/images/instagramlogo.png" alt="instagram" class="socialbutton">
+	  </a>
+	 <a href="https://www.facebook.com/profile.php?id=100086412055824">
+		 <img src= "/images/facebooklogo.png" alt="instagram" class="socialbutton">
+	  </a>
+   <a href="https://www.facebook.com/profile.php?id=100086412055824">
+		 <img src= "/images/pinterestlogo.png" alt="instagram" class="socialbutton">
+	  </a>
+	  <a href="https://www.facebook.com/profile.php?id=100086412055824">
+		 <img src= "/images/whatsapplogo.png" alt="instagram" class="socialbutton">
+	  </a>
+</div>
+
+  <div class="menu-wrapper">
+  <button class="menu-toggle">☰Menú</button>
+  
+  <div class="menu-content">
+    <button onclick="window.open('https://maps.app.goo.gl/qWou9YAyzVCr8HDe7','_blank')">
+      🗺️ Ubicación
+    </button>
+
+    <button onclick="window.location.href='proyectos.html'">
+      📐 Proyectos
+    </button>
+
+    <button onclick="window.location.href='sucursal.html'">
+      🛋️ Sucursal
+    </button>
+  </div>
+</div>
+</header>
+
+<!-- CONTENIDO PRINCIPAL DE LA SUCURSAL -->
+<div class="main-container">
+  
+  <!-- Encabezado de la sucursal -->
+  <section class="sucursal-header">
+    <h1 class="sucursal-titulo">✅ ¡Gracias por tu compra!</h1>
+    <div class="sucursal-subtitulo">Estamos confirmando tu pago...</div>
+  </section>
+
+  <div id="mensaje-exito">
+    <h1>Nos contactaremso contigo para darle seguimiento a tu pedido✨</h1>
+    <div id="detalles-pago"></div>
+
+  <!-- Galería de fotos -->
+ 
+
+<footer class="header2">
+  <div class="footerindex">Atención a clientes Sucursal 33-33-33-33-33 soporte@sensihome.com.mx</div>
+  <div class="footerindex"> Aviso de privacidad Términos y condiciones © Sensi Home Todos los derechos reservados. </div>
+</footer>
+
+<!-- Scripts -->
+<script src="/js/busqueda.js"></script>
+<script src="/js/notificaciones.js"></script>
+<script src="/js/carrito.js"></script>
+<script src="/js/carrusel-producto.js" defer></script>
+<script src="/js/menu-toggle.js"></script>
+<script src="/js/galeria-sucursal.js"></script>
+  
+</body>
+</html>
+
+
+

@@ -10,15 +10,18 @@
 
   <!-- 🎨 Stylesheets -->
   <link href="/frontend/css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
+  <link href="/frontend/css/navbar.css" rel="stylesheet" type="text/css">
   <link href="/frontend/css/notifications.css" rel="stylesheet" type="text/css">
   <link href="/frontend/css/thumbnails.css" rel="stylesheet" type="text/css">
   <link href="/frontend/css/buttons.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 
+
 <body>
   <!-- ───────────────────────── Main Container ───────────────────────── -->
-  <div class="container"> 
+
+    </header>
 
     <!-- 🧭 Header (logo, search, carrito, social, menu) -->
     <header class="header"> 
@@ -61,20 +64,32 @@
         </a>
       </div>
 
-      <!-- ☰ Menu wrapper -->
-      <div class="menu-wrapper">
-        <button class="menu-toggle">☰Menú</button>
-        <div class="menu-content">
-          <button onclick="window.location.href='expomueble.html'">✨Expomueble Internacional✨</button>
-          <button onclick="window.location.href='pages/menutogle/proyectos.html'">📐 Proyectos</button>
-          <button onclick="window.location.href='pages/menutogle/ubicaciones.html'">🛋️ Sucursal</button>
-        </div>
-      </div>
+
+
 
     </header>
-    <!-- 🔚 End Header -->
+    <!-- 🔚 End Header --> 
+<header class="navbar-conteiner gallery animate__animated animate__pulse"">
+    <div class="navbar-content">
+      <nav class="nav-menu-desktop">
+      <button onclick="window.location.href='/frontend/index.html'">INICIO</button>
+      <button onclick="window.location.href='pages/salasmodulares.html'">MODULARES</button>
+      <button onclick="window.location.href='pages/sillones.html'">SILLONES</button>
+      <button onclick="window.location.href='pages/camas.html'">CAMAS</button>
+      <button onclick="window.location.href='pages/comedores.html'">COMEDORES</button>
+      <button onclick="window.location.href='pages/salas321.html'">SALAS 3-2-1</button>
+      <button onclick="window.location.href='pages/esquineras.html'">ESQUINERAS</button>
+      <button onclick="window.location.href='pages/cuadros.html'">CUADROS</button>
+      <button onclick="window.location.href='pages/decorativos.html'">DECORATIVOS</button>
+      <button onclick="window.location.href='pages/decorativos.html'">SUCURSAL</button>
+      <button onclick="window.location.href='pages/decorativos.html'">EXPOMUEBLE</button>
+      
+      </nav>
+    </div>
+  </header>
+ 
 
-  </div>
+</div>
   <!-- ───────────────────────── End Main Container ───────────────────────── -->
 
   <!-- 🎬 Intro / Background video -->
@@ -94,21 +109,21 @@
         <img src="/frontend/images/modulares.jpg" alt="camas" class="cards" />
       </a>
       <h4 class="card-title">MODULARES</h4>
-      <p class="tag">Giratorios, estaticos, Sillas tapizadas y puffs</p>
-      <div class="text_column_alt">
-        Dale estilo a tu Sala la Línea de Sillones Individuales de Sensi Home, con ellos encontrarás variedad de telas, formas y diseños que te cautivarán
+      <p class="tag">Configuraciones de 3-4-5 piezas Diseños modulares</p>
+      <div class="text_column">
+        Diseña tu espacio a tu manera con nuestra colección de salas modulares, variedad de telas configuraciones y estilos que se adaptan a tu hogar.
       </div>
     </div>
 
     <!-- 🟦 Thumbnail: Camas -->
     <div class="thumbnail">
-      <a href="pages/sillones.html">
+      <a href="pages/camas.html">
         <img src="/frontend/images/camas.jpg" alt="camas" class="cards" />
       </a>
       <h4 class="card-title">CAMAS</h4>
-      <p class="tag">Giratorios, estaticos, Sillas tapizadas y puffs</p>
-      <div class="text_column_alt">
-        Dale estilo a tu Sala la Línea de Sillones Individuales de Sensi Home, con ellos encontrarás variedad de telas, formas y diseños que te cautivarán
+      <p class="tag">Kingsize individuales y Matrimoniales </p>
+      <div class="text_column">
+       Descansa como es debido con nuestra linea de camas Sensi Home. Kingsize, Matrimoniales o individuales con diseños modernos y confort inigualable.
       </div>
     </div>
 
@@ -119,7 +134,7 @@
       </a>
       <h4 class="card-title">SILLONES</h4>
       <p class="tag">Giratorios, estaticos, Sillas tapizadas y puffs</p>
-      <div class="text_column_alt">
+      <div class="text_column">
         Dale estilo a tu Sala la Línea de Sillones Individuales de Sensi Home, con ellos encontrarás variedad de telas, formas y diseños que te cautivarán
       </div>
     </div>
@@ -131,8 +146,8 @@
       </a>
       <h4 class="card-title">COMEDORES</h4>
       <p class="tag">Giratorios, estaticos, Sillas tapizadas y puffs</p>
-      <div class="text_column_alt">
-        Dale estilo a tu Sala la Línea de Sillones Individuales de Sensi Home, con ellos encontrarás variedad de telas, formas y diseños que te cautivarán
+      <div class="text_column">
+        Tranforma tus cenas y comidas con nuestros comedores de Sensi Home. Diseños elegantes y funcionales que se adaptan a cualquier espacio y estilo de vida.
       </div>
     </div>
 
@@ -171,13 +186,13 @@
   </section>
   <!-- ───────────────────────── Gallery End ───────────────────────── -->
 
-  <!-- 🏷️ Lobby / Promotions -->
+
   <section class="lobby">
     <div class="lobby-background-image">
       <div class="lobby-content ">
         <h2 class="logo2">PROMOCIONES</h2>
 
-        <!-- 🎠 Carrusel de producto -->
+        <!--  Carrusel de producto -->
         <div class="carrusel-producto animate__animated animate__bounce animate__repeat-3">
           <div class="carrusel-producto-wrapper ">
             <img src="/frontend/images/carruselindex/hanna1.png" class="carrusel-producto-item active " alt="Vista 1">
@@ -211,7 +226,6 @@
   <script src="/frontend/js/notificaciones.js"></script>
   <script src="/frontend/js/carrito.js"></script>
   <script src="/frontend/js/carrusel-producto.js" defer></script>
-  <script src="/frontend/js/menu-toggle.js"></script>
 
 </body>
 </html>

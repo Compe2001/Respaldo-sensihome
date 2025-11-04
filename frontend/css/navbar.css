@@ -1,0 +1,64 @@
+.navbar-conteiner{
+  top: 0;
+  z-index: 1000;
+  align-self: center;
+  align-items: center;
+  background-color: #5d5d5d;
+  border-bottom: 1px solid #353635;
+  border: n;
+  padding: 10px 16px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 10S 40px 70px rgba(10, 10, 10, 0.1);
+}
+/* 1. Estilo para el contenedor de la barra de navegación */
+.navbar-conteiner {
+    background-color: #2c2c2c; /* Fondo oscuro (Negro/Gris Oscuro) */
+    padding: 5px 0; /* Un poco de relleno arriba y abajo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle profundidad */
+}
+
+/* 2. Centrado y organización de los botones */
+.navbar-content {
+    /* Si tienes un ancho máximo en el contenedor principal, úsalo aquí */
+    /* max-width: 1200px; */ 
+    margin: 0 auto; /* Centra el contenido si se define un max-width */
+    text-align: center; /* Asegura que el contenido (nav) esté centrado horizontalmente */
+}
+
+.nav-menu-desktop {
+    display: flex;
+    justify-content: center; /* **Centra los botones** */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los botones salten de línea si es necesario */
+    gap: 5px; /* Espacio entre los botones */
+}
+
+/* 3. Estilo elegante para los Botones */
+.nav-menu-desktop button {
+    /* Resetear estilos de botón por defecto */
+    background: transparent; /* **Sin fondo inicial (sin bordes)** */
+    border: none; /* **Sin bordes** */
+    cursor: pointer;
+    text-transform: uppercase;
+    
+    /* Estilo Gris/Negro */
+    color: #f8f8f8; /* Color de texto claro */
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px; /* Ligero redondeado */
+    
+    /* Transición suave para el efecto hover */
+    transition: 
+        color 0.3s ease, 
+        background-color 0.3s ease;
+}
+
+/* 4. Estilo Hover Azul (#007bff) */
+.nav-menu-desktop button:hover {
+    color: #ffffff; /* Texto blanco en hover */
+    background-color: #37d0a2; /* **Fondo Azul en hover** */
+}

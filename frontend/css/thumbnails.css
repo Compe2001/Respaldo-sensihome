@@ -4,7 +4,7 @@
   flex: 1 1 21%;
   max-width: 21%;
   background-color: #f1f1f1;
-  border-bottom: 5px solid #95c9c3;
+  border-bottom: 5px solid #37d0a2;
   border-radius: 12px;
   padding: 20px;
   box-sizing: border-box;
@@ -119,7 +119,7 @@
 
 .thumbnail3 .descripcion {
   font-size: 16px;
-  color: #444;
+  color: #000000;
   line-height: 1.5em;
   margin-bottom: 20px;
 }
@@ -226,6 +226,113 @@
 
 }
 
+/* 🔹 Contenedor general del thumbnail5 */
+.thumbnail5 {
+  flex: 1 1 100%;
+  max-width: 100%;
+  background-color: #f8f8f8;
+  border-bottom: 5px solid #37d0a2;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  animation: menuFadeIn 0.4s ease;
+}
+
+/* 🔹 Selector de módulos */
+.modulos-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* 🔹 Cada módulo como línea visual */
+.modulo-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.modulo-label:hover {
+  background-color: #f0f0f0;
+}
+
+/* 🔹 Checkbox */
+.modulo-label input[type="checkbox"] {
+  margin-right: 12px;
+  transform: scale(1.2);
+}
+
+/* 🔹 Precio del módulo */
+.precio-modulo {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+/* 🔹 Descuento del módulo */
+.descuento-modulo {
+  font-family: 'Montserrat', sans-serif;
+  color: #e53935;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-left: 10px;
+  animation: fadeIn 0.6s ease;
+}
+
+/* 🔹 Módulo no disponible */
+.modulo-no-disponible {
+  opacity: 0.5;
+  text-decoration: line-through;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* 🔹 Total calculado */
+.precio-total {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* 🔹 Botón agregar configuración */
+.agregar-configuracion {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.agregar-configuracion:hover {
+  background-color: #218838;
+}
+
+.agregar-configuracion:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+
+
 
 /* ========== RESPONSIVE ========== */
 /* ░░░ RESPONSIVE SETTINGS ░░░ */
@@ -258,15 +365,7 @@ display:none;
 /* Móvil: 1 por fila */
 @media (max-width: 767px) 
 {
-  .header {
-    display: flex;
-    flex-direction: row; /* Cambia de column a row */
-    align-items: center;
-    justify-content: flex-start;
-    padding: 6px 8px;
-    height: 176px; /* Más compacto */
-    gap: 5px; /* Espacio entre elementos */
-  }
+
 .thumbnail2 {
     flex: 1 1 100%;
     max-width: 100%;
@@ -286,29 +385,12 @@ display:none;
     margin: 5px 0;
   }
 
-.dimensiones {
-    font-size: 0.5rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    overflow-x: auto;
-    display: block;
-    margin-top: 10px;
-  }
-
-  .dimensiones th {
-    background-color: #f0f0f0;
-    font-weight: 600;
-  }
-
   .dimensiones th,
   .dimensiones td {
     padding: 10px;
     white-space: nowrap;
     text-align: center;
   }
-
-
 
   .header-left,
   .header-center,
@@ -343,7 +425,6 @@ display:none;
     font-size: 100%;
     padding: 5px 10px ;
   }
-  
 
   .social-buttons {
     justify-content: center;
@@ -390,7 +471,7 @@ display:none;
   .column {
     width: 100%;
     padding: 40px 20px;
-    text-align: justify; /* Si quieres mejorar la legibilidad */
+    text-align: justify; 
   }
   .profile,
   .text_column {

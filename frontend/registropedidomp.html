@@ -11,6 +11,7 @@
   <link href="/frontend/css/buttons.css" rel="stylesheet" type="text/css">
 </head>
 
+<body>
 
 <header class="header2">
             <nav>
@@ -19,14 +20,11 @@
                         <a href="index.html">
                             <img src="/frontend/images/logo-blanco.png" class="homebutton" alt="Inicio">
                         </a>
-    
                     </li>
                 </ul>
-                
             </nav>
 
-            <h3 class="section animate__animated animate__pulse">Pago Con Tarjeta</h3>
-
+            <h3 class="section animate__animated animate__pulse">Pagar en Mercado Pago</h3>
 
 <button onclick="window.location.href='/frontend/carrito.html'" class="carrito-button animate__animated animate__bounceIn "> 
   <img src="/frontend/images/carrito.png" alt="Carrito">
@@ -34,7 +32,9 @@
 </button>
 
  </header>
-<body>
+
+
+
 <section class="gallery">
 
 
@@ -43,13 +43,8 @@
     </ul>
 
 
-
-<form id="pedido-form" class="thumbnail3">
+  <form id="pedido-form" class="thumbnail3">
     
-
-
-
-
 <div class="input-group">
   <label for="fecha">Fecha</label>
   <input type="date" id="fecha" name="fecha" required>
@@ -65,25 +60,13 @@
     <label for="municipio"> Municipio </label>
     <select id="municipio" name="municipio" class="selector-codigopostal">
       <option value=""> ----------- </option>
-<option value="Guadalajara">Guadalajara</option>
-<option value="Zapopan">Zapopan</option>
-<option value="Tlajomulco">Tlajomulco</option>
-<option value="Tonala">Tonalá</option>
-<option value="Tlaquepaque">Tlaquepaque</option>
-<option value="El Salto">El Salto</option>
-<option value="Ameca">Ameca</option>
-<option value="San Pedro Tlaquepaque">San Pedro Tlaquepaque</option>
-<option value="Santa Anita">Santa Anita</option>
-<option value="San Agustin">San Agustín</option>
-<option value="Las Pintas">Las Pintas</option>
-<option value="Tesistán">Tesistán</option>
-<option value="Santa Cruz del Valle">Santa Cruz del Valle</option>
-<option value="San Isidro">San Isidro</option>
-<option value="Acatlán de Juárez">Acatlán de Juárez</option>
-<option value="Villa Corona">Villa Corona</option>
-<option value="Chapala">Chapala</option>
-<option value="Ajijic">Ajijic</option>
-<option value="Ixtlahuacán de los Membrillos">Ixtlahuacán de los Membrillos</option>
+      <option value="Guadalajara">Guadalajara</option>
+      <option value="Zapopan">Zapopan</option>
+      <option value="Tlajomulco">Tlajomulco</option>
+      <option value="Tonala">Tonalá</option>
+      <option value="Tlaquepaque">Tlaquepaque</option>
+      <option value="El Salto">El Salto</option>
+      <option value="El Salto">Ameca</option>
     </select>
     </div>
 
@@ -157,6 +140,10 @@
   </div>
 
 </div>
+
+
+
+
 <div id="fecha-entrega" class="footerindex">
 <h2 class="text_column">Tiempo de entrega aproximado 1 semana
   ✨Se te dará seguimiento a tu pedido via correo o telefono✨
@@ -164,26 +151,17 @@
 
 
 </div>
-
-<div id="stripe-container" style="display:none;">
-  <div id="card-element"></div>
-</div>
-
-<button type="button" id="btnConfirmarPago" class="button" style="display:none;" disabled>Confirmar pago con tarjeta</button>
-
+<div class="checkout-container"></div>
 
 <div id="resumen-pedido" class="input-group"></div>
     <div id="fecha-de-pedido" class="fecha-pedido"> </div>
-    <button id="btnSubmit" type="submit" class="buttonprepago">Proceder a ingresar No° de Tarjeta</button>
 
 
-
+    <button type="submit" class="button">Completar pedido y pagar</button>
 
     
   </form>
 
-
-  
 </section>
 
 
@@ -193,9 +171,8 @@
   document.getElementById("fecha").value = hoy;
 </script>
 
-<script src="/frontend/js/carrito.js"></script>
-<script src="https://js.stripe.com/v3"></script>
-<script src="/frontend/js/registropedidostripe.js"></script>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script src="/frontend/js/registropedidomp.js"></script>
 </body>
 </html>
 

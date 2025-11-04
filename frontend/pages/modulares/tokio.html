@@ -15,20 +15,16 @@
     <div class="container">
         <!-- Encabezado -->
         <header class="header2">
-            <nav>
-                <ul class="navbar">
-                    <li class="nav-item-home">
-                        <a href="/frontend/index.html">
-                            <img src="/frontend/images/logo-blanco.png" class="homebutton" alt="Inicio">
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            
-
+           
+                
+                    
+        <a href="/frontend/index.html" >
+        <img src="/frontend/images/logo-blanco.png" class="homebutton" alt="Inicio">
+        </a>
+                
             <!-- Enlace corregido -->
             <a href="/frontend/pages/sillones.html">
-                <button class="returnsection_button animate__animated animate__pulse">SILLONES</button>
+                <button class="returnsection_button animate__animated animate__pulse">SALA MODULAR</button>
             </a>
 
             <button onclick="window.location.href='/frontend/carrito.html'" class="carrito-button">
@@ -37,28 +33,37 @@
 </button>
         </header>
         <section class="producto">
-            <div class="thumbnail3" data-id="tokio" data-nombre="TOKIO" data-precioanterior="5999" data-precio="4999" >
-                <div class="carrusel-producto">
-                    <div class="carrusel-producto-wrapper">
-                        <img src="/frontend/images/modulares/tokio/tokio_portada.jpg" class="carrusel-producto-item active" alt="Vista 1">
-                        <img src="/frontend/images/sillones/hanna/hannaisometrico.jpg" class="carrusel-producto-item" alt="Vista 2">
-                        <img src="/frontend/images/sillones/hanna/hannaambientado.png" class="carrusel-producto-item" alt="Vista 3">
-                    </div>
-                    <button class="carrusel-producto-btn prev">&#9664;</button>
-                    <button class="carrusel-producto-btn next">&#9654;</button>
-                </div>
-                <h2>TOKIO</h2>
-                <p class="descripcion">Sala Modular, con diferentes configuraciones y estilos.</p>
-                <ul class="caracteristicas">
-                    <li>Gira 360°</li>
-                    <li>Ajuste de altura neumático</li>
-                    <li>Tapizado suave al tacto</li>
-                    <li>Estructura metálica resistente</li>
-                </ul>
-                <button class="agregar-carrito"> Agregar al carrito </button>
-                <button class="comprar">Comprar Via Whatsapp (solo ZMG) </button>
-                <button class="menu-toggle">Más Información</button>
-            </div>
+           <div class="thumbnail5" data-nombre="SALA MODULAR">
+  <!-- 🖼️ Imagen principal -->
+  <img src="/frontend/images/modulares/tokio/tokio_portada.jpg" class="cards" alt="Sala Modular">
+
+  <!-- 🏷️ Título -->
+  <h4 class="card-title">SALA MODULAR</h4>
+  <p class="tag">Elige los módulos que deseas incluir</p>
+
+  <!-- 🧩 Selector de módulos -->
+  <div class="modulos-selector">
+    <label class="modulo-label">
+      <input type="checkbox" data-id="modulo-a"> Módulo A (Esquinero)
+    </label>
+    <label class="modulo-label">
+      <input type="checkbox" data-id="modulo-b"> Módulo B (Central)
+    </label>
+    <label class="modulo-label">
+      <input type="checkbox" data-id="modulo-c"> Módulo C (Reposet)
+    </label>
+    <label class="modulo-label">
+      <input type="checkbox" data-id="sala-completa"> Sala Completa
+    </label>
+  </div>
+
+  <!-- 💰 Total calculado -->
+  <p class="precio-total">Total: $0 MXN</p>
+
+  <!-- 🛒 Botón de acción -->
+  <button class="agregar-configuracion" disabled>Agregar configuración 🛋️</button>
+</div>
+
         </section>
         <!-- Pie de Página -->
         <footer class="footer">
@@ -67,6 +72,7 @@
     </div>
     <div id="notificaciones"></div>
     <script src="/frontend/js/thumbnailsstock.js"></script>
+    <script src="/frontend/js/thumbnailConfigManager.js"></script>
     <script src="/frontend/js/notificaciones.js"></script>
     <script src="/frontend/js/carrito.js"></script>
     <script src="/frontend/js/carrusel-producto.js" defer></script>
