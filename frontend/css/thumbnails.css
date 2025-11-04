@@ -228,19 +228,15 @@
 
 /* 🔹 Contenedor general del thumbnail5 */
 .thumbnail5 {
-  flex: 1 1 100%;
-  max-width: 100%;
+   width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
   background-color: #f8f8f8;
-  border-bottom: 5px solid #37d0a2;
-  border-radius: 12px;
-  padding: 20px;
-  box-sizing: border-box;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  padding: 30px 20px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  animation: menuFadeIn 0.4s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05)
 }
 
 /* 🔹 Selector de módulos */
