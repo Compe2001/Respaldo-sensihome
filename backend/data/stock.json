@@ -286,5 +286,48 @@
     "stock": 66,
     "thumbnail": "",
     "activo": false
+  },
+
+  {
+    "id": "tokio",
+    "nombre": "Sala Tokio",
+    "categoria": "sala_modular",
+    "activo": true,
+    "thumbnail": "/frontend/images/salas/tokio/tokio_portada.jpg",
+    "precio": 8999,
+    "precio_anterior": null,
+    "modulos": [
+      {
+        "id": "tokio-esquina",
+        "nombre": "tokio_esquina",
+        "precio": 2999,
+        "precio_anterior": null,
+        "activo": true
+      },
+      {
+        "id": "tokio-sillón-sin-brazo",
+        "nombre": "tokio-sillón-sin-brazo",
+        "precio": 3499,
+        "precio_anterior": null,
+        "activo": true
+      },
+      {
+        "id": "tokio-taburete",
+        "nombre": "tokio-taburete",
+        "precio": 3999,
+        "precio_anterior": null,
+        "activo": false
+      }
+    ]
   }
+
+  
+
+  
+
+
+
+
+
+  
 ]
