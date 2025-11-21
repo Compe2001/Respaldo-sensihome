@@ -57,8 +57,7 @@ position: sticky;
   display: flex;
   align-items: center;
   justify-content: space-between;
-    box-shadow: 10S 40px 70px rgba(10, 10, 10, 0.1);
-  
+  box-shadow: 10S 40px 70px rgba(10, 10, 10, 0.1);
 }
 
 .section {

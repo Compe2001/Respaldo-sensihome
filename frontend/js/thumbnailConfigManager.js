@@ -42,6 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
       precioSpan.textContent = ` $${producto.precio}`;
       label.appendChild(precioSpan);
 
+      if (!c.dataset.precio) {
+  console.warn(`⚠️ Módulo sin precio: ${c.dataset.id}`);
+}
+
+
       // 🔥 Mostrar descuento si aplica
       if (producto.precio_anterior && producto.precio_anterior > producto.precio) {
         const porcentaje = Math.round(100 - (producto.precio * 100) / producto.precio_anterior);

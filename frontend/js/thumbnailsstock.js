@@ -18,17 +18,24 @@ function thumbnailContadorCarrito(thumbnail, precioElement, cantidadEnCarrito) {
     thumbnail.insertBefore(contadorElement, precioElement.nextSibling);
   }
 
+  // Verificar si es thumbnail4 o thumbnail5
+  if (thumbnail.classList.contains('thumbnail4') || thumbnail.classList.contains('thumbnail5')) {
+    contadorElement.style.display = 'none';
+    return; // Salir de la función early
+  }
+
+  // Restaurar display por si antes estaba oculto
+  contadorElement.style.display = '';
+
   if (cantidadEnCarrito > 0) {
     contadorElement.textContent = `🛒 ${cantidadEnCarrito}`;
     contadorElement.href = '/frontend/carrito.html';
+    contadorElement.style.cursor = 'pointer';
   } else {
     contadorElement.textContent = '🛒';
     contadorElement.removeAttribute('href');
     contadorElement.style.cursor = 'default';
   }
-
-  contadorElement.classList.add('actualizado');
-  setTimeout(() => contadorElement.classList.remove('actualizado'), 300);
 }
 
 
@@ -51,7 +58,7 @@ class ThumbnailStockManager {
 
   // 🚀 Inicialización principal
   init() {
-    this.thumbnails = document.querySelectorAll('.thumbnail2, .thumbnail3');
+    this.thumbnails = document.querySelectorAll('.thumbnail2, .thumbnail3,.thumbnail4,.thumbnail5');
     if (this.thumbnails.length === 0) {
       console.log('🚫 No hay thumbnails en esta página');
       return;
@@ -62,6 +69,7 @@ class ThumbnailStockManager {
     this.obtenerStock();
   }
 
+  
   // 🧱 Crea elementos visuales de stock
   inicializarElementosStock() {
     this.thumbnails.forEach(thumbnail => {
@@ -139,7 +147,7 @@ getDescuentoPorcentaje(id) {
           producto.stock === 0
             ? `${basePath}/${id}_agotado.jpg`
             : producto.precio_anterior !== null && producto.precio_anterior !== producto.precio
-            ? `${basePath}/${id}_promocion.jpg`
+            ? `${basePath}/${id}_portada.jpg`
             : `${basePath}/${id}_portada.jpg`;
       }
 
