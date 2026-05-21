@@ -548,24 +548,7 @@ display:none;
     height: 136px; /* Más compacto */
     gap: 2px; /* Espacio entre elementos */
   }
-.thumbnail2 {
-    flex: 1 1 100%;
-    max-width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-  }
 
-  .thumbnail2 img.cards {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-  }
-
-  .thumbnail2 h4,
-  .thumbnail2 p {
-    font-size: 1rem;
-    margin: 5px 0;
-  }
 
 .dimensiones {
     font-size: 0.5rem;
